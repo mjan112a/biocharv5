@@ -203,6 +203,9 @@ export function CircularSankeyHomepage({
 
       // Add link label following the path
       if (link.label) {
+        // Check if this is a reverse/loopback connection to prevent upside-down text
+        const isReverse = targetNode && sourceNode && targetNode.x < sourceNode.x;
+        
         linkGroup.append('text')
           .attr('font-size', '12')
           .attr('fill', '#374151')
@@ -212,6 +215,7 @@ export function CircularSankeyHomepage({
           .attr('href', `#link-path-${link.id}`)
           .attr('startOffset', '50%')
           .attr('text-anchor', 'middle')
+          .attr('side', isReverse ? 'right' : 'left') // Use 'right' side for reverse paths to keep text upright
           .style('paint-order', 'stroke')
           .style('stroke', 'white')
           .style('stroke-width', '3')
