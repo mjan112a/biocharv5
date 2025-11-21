@@ -164,15 +164,11 @@ export function SplitSankeyComparison({
 
             {/* Content */}
             <div className="p-2 bg-white min-h-[750px] flex items-center justify-center">
-              {currentDiagram ? (
-                <CircularSankeyHomepage
-                  diagramData={proposedDiagram}
-                  width={1200}
-                  height={700}
-                />
-              ) : (
-                <NonExistentCurrentView componentName={componentName} />
-              )}
+              <CircularSankeyHomepage
+                diagramData={proposedDiagram}
+                width={1200}
+                height={700}
+              />
             </div>
           </div>
         </div>
