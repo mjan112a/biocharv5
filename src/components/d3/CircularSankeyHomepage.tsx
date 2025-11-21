@@ -219,91 +219,25 @@ export function CircularSankeyHomepage({
           .text(link.label);
       }
 
-      // Add animated particles (default if no animationFrequency is 3 particles)
+      // Store particle configuration for later initialization (after scaling)
       const particleCount = link.animationFrequency !== undefined ? link.animationFrequency : 3;
       const particleSize = link.animationSize || 4;
       const animationRate = link.animationRate || 3;
-      const duration = (11 - animationRate) * 2; // Convert rate to duration
+      const duration = (11 - animationRate) * 2;
 
       if (particleCount > 0) {
-        // Determine if we should use an icon
         const useIcon = link.particleIcon || (link.particleIconSource && link.particleIconSource !== 'dot');
         const iconPath = link.particleIcon || (useIcon ? link.particleIconSource : undefined);
 
-        // Get the path element to calculate length for animation
-        const pathElement = document.getElementById(`link-path-${link.id}`) as unknown as SVGPathElement;
-        const pathLength = pathElement?.getTotalLength() || 0;
-        
-        // Get start point for initialization to prevent jump from 0,0
-        const startPoint = pathElement?.getPointAtLength(0) || { x: 0, y: 0 };
-
-        for (let i = 0; i < particleCount; i++) {
-          const delay = (i / particleCount) * duration;
-          
-          if (useIcon && iconPath) {
-            // Create icon particle using path-following animation
-            const icon = linkGroup.append('image')
-              .attr('href', iconPath)
-              .attr('xlink:href', iconPath) // Support xlink:href for compatibility
-              .attr('width', particleSize * 4)
-              .attr('height', particleSize * 4)
-              .attr('x', -particleSize * 2)
-              .attr('y', -particleSize * 2)
-              .attr('transform', `translate(${startPoint.x}, ${startPoint.y})`) // Initialize at start
-              .attr('opacity', highlightedNode
-                ? (highlightedNode === link.source || highlightedNode === link.target ? 1 : 0.1)
-                : 0.8)
-              .attr('class', 'link-particle') // Add class for selection
-              .style('transition', 'opacity 0.3s ease');
-
-            // Animate along the path using D3 transition with path length
-            function animateIcon() {
-              icon.transition()
-                .duration(duration * 1000)
-                .ease(d3.easeLinear)
-                .delay(delay * 1000)
-                .attrTween('transform', function() {
-                  return function(t) {
-                    if (!pathElement) return `translate(0,0)`;
-                    const point = pathElement.getPointAtLength(t * pathLength);
-                    return `translate(${point.x},${point.y})`;
-                  };
-                })
-                .on('end', animateIcon);
-            }
-
-            animateIcon();
-          } else {
-            // Create circle particle using path-following animation
-            const circle = linkGroup.append('circle')
-              .attr('r', particleSize)
-              .attr('fill', link.color)
-              .attr('transform', `translate(${startPoint.x}, ${startPoint.y})`) // Initialize at start
-              .attr('opacity', highlightedNode
-                ? (highlightedNode === link.source || highlightedNode === link.target ? 1 : 0.1)
-                : 0.8)
-              .attr('class', 'link-particle') // Add class for selection
-              .style('transition', 'opacity 0.3s ease');
-
-            // Animate along the path using D3 transition with path length
-            function animate() {
-              circle.transition()
-                .duration(duration * 1000)
-                .ease(d3.easeLinear)
-                .delay(delay * 1000)
-                .attrTween('transform', function() {
-                  return function(t) {
-                    if (!pathElement) return `translate(0,0)`;
-                    const point = pathElement.getPointAtLength(t * pathLength);
-                    return `translate(${point.x},${point.y})`;
-                  };
-                })
-                .on('end', animate);
-            }
-
-            animate();
-          }
-        }
+        // Store configuration for particle initialization after scaling
+        (link as any)._particleConfig = {
+          count: particleCount,
+          size: particleSize,
+          duration,
+          useIcon,
+          iconPath,
+          linkGroup
+        };
       }
     });
 
@@ -448,6 +382,79 @@ export function CircularSankeyHomepage({
       const translateY = (height - scaledHeight) / 2 - bbox.y * scale;
       
       g.attr('transform', `translate(${translateX},${translateY}) scale(${scale})`);
+      
+      // Now initialize particles AFTER scaling is applied
+      diagramData.links.forEach((link) => {
+        const config = (link as any)._particleConfig;
+        if (!config) return;
+
+        const { count, size, duration, useIcon, iconPath, linkGroup } = config;
+        const pathElement = document.getElementById(`link-path-${link.id}`) as unknown as SVGPathElement;
+        const pathLength = pathElement?.getTotalLength() || 0;
+        const startPoint = pathElement?.getPointAtLength(0) || { x: 0, y: 0 };
+
+        for (let i = 0; i < count; i++) {
+          const delay = (i / count) * duration;
+          
+          if (useIcon && iconPath) {
+            const icon = linkGroup.append('image')
+              .attr('href', iconPath)
+              .attr('xlink:href', iconPath)
+              .attr('width', size * 4)
+              .attr('height', size * 4)
+              .attr('x', -size * 2)
+              .attr('y', -size * 2)
+              .attr('transform', `translate(${startPoint.x}, ${startPoint.y})`)
+              .attr('opacity', highlightedNode
+                ? (highlightedNode === link.source || highlightedNode === link.target ? 1 : 0.1)
+                : 0.8)
+              .attr('class', 'link-particle')
+              .style('transition', 'opacity 0.3s ease');
+
+            function animateIcon() {
+              icon.transition()
+                .duration(duration * 1000)
+                .ease(d3.easeLinear)
+                .delay(delay * 1000)
+                .attrTween('transform', function() {
+                  return function(t: number) {
+                    if (!pathElement) return `translate(0,0)`;
+                    const point = pathElement.getPointAtLength(t * pathLength);
+                    return `translate(${point.x},${point.y})`;
+                  };
+                })
+                .on('end', animateIcon);
+            }
+            animateIcon();
+          } else {
+            const circle = linkGroup.append('circle')
+              .attr('r', size)
+              .attr('fill', link.color)
+              .attr('transform', `translate(${startPoint.x}, ${startPoint.y})`)
+              .attr('opacity', highlightedNode
+                ? (highlightedNode === link.source || highlightedNode === link.target ? 1 : 0.1)
+                : 0.8)
+              .attr('class', 'link-particle')
+              .style('transition', 'opacity 0.3s ease');
+
+            function animate() {
+              circle.transition()
+                .duration(duration * 1000)
+                .ease(d3.easeLinear)
+                .delay(delay * 1000)
+                .attrTween('transform', function() {
+                  return function(t: number) {
+                    if (!pathElement) return `translate(0,0)`;
+                    const point = pathElement.getPointAtLength(t * pathLength);
+                    return `translate(${point.x},${point.y})`;
+                  };
+                })
+                .on('end', animate);
+            }
+            animate();
+          }
+        }
+      });
     }
 
   }, [diagramData, width, height, highlightedNode]);
