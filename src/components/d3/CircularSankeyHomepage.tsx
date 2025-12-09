@@ -151,25 +151,23 @@ export function CircularSankeyHomepage({
           ? returnY
           : Math.max(sy, ty) + 100 + stagger;
         
-        // Determine if the loop goes above or below the connection points
-        const minConnectionY = Math.min(sy, ty);
-        const maxConnectionY = Math.max(sy, ty);
-        const isAbove = loopY < minConnectionY;
-        
-        // Use appropriate curve direction based on whether loop is above or below
-        const curveDir = isAbove ? -1 : 1; // -1 for upward curves, 1 for downward
+        // Determine curve directions based on relative positions
+        // Source side: curve toward loopY (up if source below loopY, down if above)
+        const sourceCurveDir = sy < loopY ? 1 : -1;
+        // Target side: curve toward target (up if target above loopY, down if below)
+        const targetCurveDir = ty < loopY ? -1 : 1;
         
         // If reverse is true, generate path from target to source (for text)
         if (reverse) {
           return `
             M ${tx} ${ty}
             L ${tx - gap} ${ty}
-            Q ${tx - gap - 20} ${ty} ${tx - gap - 20} ${ty + (20 * curveDir)}
-            L ${tx - gap - 20} ${loopY - (20 * curveDir)}
+            Q ${tx - gap - 20} ${ty} ${tx - gap - 20} ${ty - (20 * targetCurveDir)}
+            L ${tx - gap - 20} ${loopY + (20 * targetCurveDir)}
             Q ${tx - gap - 20} ${loopY} ${tx - gap} ${loopY}
             L ${sx + gap} ${loopY}
-            Q ${sx + gap + 20} ${loopY} ${sx + gap + 20} ${loopY - (20 * curveDir)}
-            L ${sx + gap + 20} ${sy + (20 * curveDir)}
+            Q ${sx + gap + 20} ${loopY} ${sx + gap + 20} ${loopY - (20 * sourceCurveDir)}
+            L ${sx + gap + 20} ${sy + (20 * sourceCurveDir)}
             Q ${sx + gap + 20} ${sy} ${sx + gap} ${sy}
             L ${sx} ${sy}
           `;
@@ -179,12 +177,12 @@ export function CircularSankeyHomepage({
         return `
           M ${sx} ${sy}
           L ${sx + gap} ${sy}
-          Q ${sx + gap + 20} ${sy} ${sx + gap + 20} ${sy + (20 * curveDir)}
-          L ${sx + gap + 20} ${loopY - (20 * curveDir)}
+          Q ${sx + gap + 20} ${sy} ${sx + gap + 20} ${sy + (20 * sourceCurveDir)}
+          L ${sx + gap + 20} ${loopY - (20 * sourceCurveDir)}
           Q ${sx + gap + 20} ${loopY} ${sx + gap} ${loopY}
           L ${tx - gap} ${loopY}
-          Q ${tx - gap - 20} ${loopY} ${tx - gap - 20} ${loopY - (20 * curveDir)}
-          L ${tx - gap - 20} ${ty + (20 * curveDir)}
+          Q ${tx - gap - 20} ${loopY} ${tx - gap - 20} ${loopY + (20 * targetCurveDir)}
+          L ${tx - gap - 20} ${ty - (20 * targetCurveDir)}
           Q ${tx - gap - 20} ${ty} ${tx - gap} ${ty}
           L ${tx} ${ty}
         `;
