@@ -117,7 +117,7 @@
     },
     {
       "id": "reduced-emissions",
-      "name": "Reduced<br/>GHG<br/>(-60%)",
+      "name": "GHG<br/>(Reduced)",
       "x": 650,
       "y": 650,
       "width": 80,
@@ -135,7 +135,7 @@
       "target": "chicken-house-main",
       "value": 15,
       "color": "#FFA500",
-      "label": "1,000 birds",
+      "label": "Live Chickens",
       "animationFrequency": 3,
       "animationRate": 5,
       "animationSize": 4
@@ -146,7 +146,7 @@
       "target": "chicken-house-main",
       "value": 20,
       "color": "#F59E0B",
-      "label": "2,000 kg",
+      "label": "Feed",
       "animationFrequency": 4,
       "animationRate": 5,
       "animationSize": 4
@@ -157,7 +157,7 @@
       "target": "chicken-house-main",
       "value": 10,
       "color": "#16A34A",
-      "label": "150 kg",
+      "label": "Biochar Bedding",
       "animationFrequency": 3,
       "animationRate": 6,
       "animationSize": 4
@@ -168,7 +168,7 @@
       "target": "chicken-house-main",
       "value": 10,
       "color": "#3B82F6",
-      "label": "1,500 L",
+      "label": "Water",
       "animationFrequency": 3,
       "animationRate": 4,
       "animationSize": 4
@@ -179,7 +179,7 @@
       "target": "chicken-house-main",
       "value": 8,
       "color": "#34D399",
-      "label": "800 kWh",
+      "label": "Renewable Energy",
       "animationFrequency": 4,
       "animationRate": 8,
       "animationSize": 5
@@ -190,7 +190,7 @@
       "target": "grown-chickens",
       "value": 18,
       "color": "#10B981",
-      "label": "1,800 kg",
+      "label": "Grown Chickens",
       "animationFrequency": 3,
       "animationRate": 5,
       "animationSize": 4
@@ -201,7 +201,7 @@
       "target": "litter-char-mix",
       "value": 14,
       "color": "#B45309",
-      "label": "450 kg",
+      "label": "Litter+Char Mix",
       "animationFrequency": 3,
       "animationRate": 5,
       "animationSize": 4
@@ -212,7 +212,7 @@
       "target": "dead-chickens",
       "value": 6,
       "color": "#EF4444",
-      "label": "50 birds",
+      "label": "Reduced Mortality",
       "animationFrequency": 1,
       "animationRate": 3,
       "animationSize": 4
@@ -223,7 +223,7 @@
       "target": "reduced-emissions",
       "value": 6,
       "color": "#34D399",
-      "label": "80 kg CO₂",
+      "label": "Reduced GHG",
       "animationFrequency": 1,
       "animationRate": 3,
       "animationSize": 3

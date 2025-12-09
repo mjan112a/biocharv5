@@ -135,7 +135,7 @@
       "target": "processing-plant-main",
       "value": 20,
       "color": "#059669",
-      "label": "1,800 kg",
+      "label": "Live Chickens",
       "animationFrequency": 3,
       "animationRate": 5,
       "animationSize": 4
@@ -146,7 +146,7 @@
       "target": "processing-plant-main",
       "value": 15,
       "color": "#3B82F6",
-      "label": "2,000 L",
+      "label": "Water",
       "animationFrequency": 3,
       "animationRate": 4,
       "animationSize": 4
@@ -157,7 +157,7 @@
       "target": "processing-plant-main",
       "value": 12,
       "color": "#DC2626",
-      "label": "1,200 kWh",
+      "label": "Electricity",
       "animationFrequency": 2,
       "animationRate": 2,
       "animationSize": 4
@@ -168,7 +168,7 @@
       "target": "processing-plant-main",
       "value": 8,
       "color": "#6B7280",
-      "label": "50 kg",
+      "label": "CO₂ (Dry Ice)",
       "animationFrequency": 1,
       "animationRate": 3,
       "animationSize": 4
@@ -179,7 +179,7 @@
       "target": "chicken-meat",
       "value": 18,
       "color": "#10B981",
-      "label": "1,300 kg",
+      "label": "Chicken Meat",
       "animationFrequency": 3,
       "animationRate": 5,
       "animationSize": 4
@@ -190,7 +190,7 @@
       "target": "wastewater",
       "value": 14,
       "color": "#155E75",
-      "label": "1,800 L",
+      "label": "Wastewater",
       "animationFrequency": 2,
       "animationRate": 2,
       "animationSize": 4
@@ -201,7 +201,7 @@
       "target": "fog",
       "value": 10,
       "color": "#9A3412",
-      "label": "200 kg",
+      "label": "FOG",
       "animationFrequency": 2,
       "animationRate": 2,
       "animationSize": 4
@@ -212,7 +212,7 @@
       "target": "other-waste",
       "value": 8,
       "color": "#713F12",
-      "label": "300 kg",
+      "label": "Other Waste",
       "animationFrequency": 2,
       "animationRate": 2,
       "animationSize": 4
@@ -223,7 +223,7 @@
       "target": "ghg",
       "value": 10,
       "color": "#991B1B",
-      "label": "300 kg CO₂",
+      "label": "GHG Emissions",
       "animationFrequency": 4,
       "animationRate": 3,
       "animationSize": 3

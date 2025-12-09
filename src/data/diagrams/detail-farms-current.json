@@ -99,7 +99,7 @@
       "width": 80,
       "height": 80,
       "color": "#F59E0B",
-      "icon": "/images/iconslibrary/water-01.svg",
+      "icon": "/images/iconslibrary/water-runoff-02.svg",
       "iconOnly": true,
       "showLabel": true
     },
@@ -123,7 +123,7 @@
       "target": "farms-main",
       "value": 15,
       "color": "#713F12",
-      "label": "500 kg",
+      "label": "Used Litter",
       "animationFrequency": 2,
       "animationRate": 2,
       "animationSize": 4
@@ -134,7 +134,7 @@
       "target": "farms-main",
       "value": 12,
       "color": "#EAB308",
-      "label": "300 kg",
+      "label": "Commercial Fertilizer",
       "animationFrequency": 2,
       "animationRate": 4,
       "animationSize": 4
@@ -145,7 +145,7 @@
       "target": "farms-main",
       "value": 18,
       "color": "#3B82F6",
-      "label": "5,000 L",
+      "label": "Water",
       "animationFrequency": 3,
       "animationRate": 5,
       "animationSize": 4
@@ -156,7 +156,7 @@
       "target": "farms-main",
       "value": 8,
       "color": "#DC2626",
-      "label": "100 L",
+      "label": "Diesel",
       "animationFrequency": 2,
       "animationRate": 2,
       "animationSize": 4
@@ -167,7 +167,7 @@
       "target": "farms-main",
       "value": 6,
       "color": "#6B7280",
-      "label": "40 hrs",
+      "label": "Labor",
       "animationFrequency": 1,
       "animationRate": 3,
       "animationSize": 4
@@ -178,7 +178,7 @@
       "target": "crops",
       "value": 20,
       "color": "#22C55E",
-      "label": "2,000 kg",
+      "label": "Crops",
       "animationFrequency": 3,
       "animationRate": 5,
       "animationSize": 4
@@ -189,7 +189,7 @@
       "target": "nutrient-runoff",
       "value": 14,
       "color": "#F59E0B",
-      "label": "40% nutrients",
+      "label": "Nutrient Runoff",
       "animationFrequency": 2,
       "animationRate": 2,
       "animationSize": 4
@@ -200,7 +200,7 @@
       "target": "ghg",
       "value": 10,
       "color": "#991B1B",
-      "label": "150 kg CO₂",
+      "label": "GHG Emissions",
       "animationFrequency": 2,
       "animationRate": 2,
       "animationSize": 4

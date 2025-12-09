@@ -111,7 +111,7 @@
       "target": "farms-main",
       "value": 14,
       "color": "#1F2937",
-      "label": "300 kg",
+      "label": "Biochar",
       "animationFrequency": 3,
       "animationRate": 5,
       "animationSize": 5
@@ -122,7 +122,7 @@
       "target": "farms-main",
       "value": 12,
       "color": "#059669",
-      "label": "200 L",
+      "label": "Digestate Liquid",
       "animationFrequency": 3,
       "animationRate": 5,
       "animationSize": 4
@@ -133,7 +133,7 @@
       "target": "farms-main",
       "value": 10,
       "color": "#10B981",
-      "label": "100 kg",
+      "label": "Digestate Solid",
       "animationFrequency": 3,
       "animationRate": 5,
       "animationSize": 4
@@ -144,7 +144,7 @@
       "target": "farms-main",
       "value": 8,
       "color": "#3B82F6",
-      "label": "1000 L",
+      "label": "Water",
       "animationFrequency": 2,
       "animationRate": 4,
       "animationSize": 4
@@ -155,7 +155,7 @@
       "target": "crops-out",
       "value": 16,
       "color": "#F59E0B",
-      "label": "2000 kg",
+      "label": "High-Quality Crops",
       "animationFrequency": 3,
       "animationRate": 6,
       "animationSize": 5
@@ -166,7 +166,7 @@
       "target": "water-out",
       "value": 6,
       "color": "#3B82F6",
-      "label": "950 L (95% clean)",
+      "label": "Clean Water",
       "animationFrequency": 2,
       "animationRate": 4,
       "animationSize": 3
@@ -177,7 +177,7 @@
       "target": "carbon-sequestered",
       "value": 8,
       "color": "#059669",
-      "label": "500 kg CO2",
+      "label": "Carbon Sequestered",
       "animationFrequency": 2,
       "animationRate": 4,
       "animationSize": 4

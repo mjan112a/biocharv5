@@ -45,7 +45,7 @@
     },
     {
       "id": "clean-water-out",
-      "name": "Clean Water<br/>(95% pure)",
+      "name": "Clean<br/>Water",
       "x": 650,
       "y": 250,
       "width": 80,
@@ -87,7 +87,7 @@
       "target": "waterways-main",
       "value": 14,
       "color": "#3B82F6",
-      "label": "950 L clean",
+      "label": "Farm Runoff (Filtered)",
       "animationFrequency": 2,
       "animationRate": 5,
       "animationSize": 4
@@ -109,7 +109,7 @@
       "target": "clean-water-out",
       "value": 16,
       "color": "#0EA5E9",
-      "label": "95% clean",
+      "label": "Clean Water",
       "animationFrequency": 3,
       "animationRate": 6,
       "animationSize": 5
@@ -131,7 +131,7 @@
       "target": "minimal-pollutants",
       "value": 4,
       "color": "#EF4444",
-      "label": "5% only",
+      "label": "Minimal Pollutants",
       "animationFrequency": 1,
       "animationRate": 1,
       "animationSize": 2

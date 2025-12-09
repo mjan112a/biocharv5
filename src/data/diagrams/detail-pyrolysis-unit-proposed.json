@@ -27,7 +27,7 @@
       "width": 180,
       "height": 150,
       "color": "#DC2626",
-      "icon": "/images/iconslibrary/pyrolysis-unit-01.svg",
+      "icon": "/images/iconslibrary/pyrolysis-unit-02.svg",
       "iconOnly": true,
       "showLabel": true
     },
@@ -87,7 +87,7 @@
       "target": "pyrolysis-unit-main",
       "value": 20,
       "color": "#92400E",
-      "label": "1000 kg",
+      "label": "Used Poultry Litter",
       "animationFrequency": 2,
       "animationRate": 4,
       "animationSize": 5
@@ -98,7 +98,7 @@
       "target": "biochar-out",
       "value": 14,
       "color": "#1F2937",
-      "label": "300 kg",
+      "label": "Biochar",
       "animationFrequency": 2,
       "animationRate": 5,
       "animationSize": 5
@@ -109,7 +109,7 @@
       "target": "syngas-out",
       "value": 12,
       "color": "#EF4444",
-      "label": "400 kg",
+      "label": "Syngas",
       "animationFrequency": 2,
       "animationRate": 5,
       "animationSize": 4
@@ -120,7 +120,7 @@
       "target": "bio-oils-out",
       "value": 10,
       "color": "#F59E0B",
-      "label": "200 kg",
+      "label": "Bio-Oils",
       "animationFrequency": 2,
       "animationRate": 4,
       "animationSize": 4
@@ -131,7 +131,7 @@
       "target": "wood-vinegar-out",
       "value": 8,
       "color": "#78350F",
-      "label": "100 L",
+      "label": "Wood Vinegar",
       "animationFrequency": 2,
       "animationRate": 3,
       "animationSize": 3

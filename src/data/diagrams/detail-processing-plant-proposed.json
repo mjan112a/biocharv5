@@ -117,7 +117,7 @@
     },
     {
       "id": "reduced-ghg",
-      "name": "Reduced<br/>GHG<br/>(-70%)",
+      "name": "GHG<br/>(Reduced)",
       "x": 650,
       "y": 670,
       "width": 80,
@@ -135,7 +135,7 @@
       "target": "processing-plant-main",
       "value": 20,
       "color": "#059669",
-      "label": "1,800 kg",
+      "label": "Live Chickens",
       "animationFrequency": 3,
       "animationRate": 5,
       "animationSize": 4
@@ -146,7 +146,7 @@
       "target": "processing-plant-main",
       "value": 15,
       "color": "#3B82F6",
-      "label": "2,000 L",
+      "label": "Water",
       "animationFrequency": 3,
       "animationRate": 4,
       "animationSize": 4
@@ -157,7 +157,7 @@
       "target": "processing-plant-main",
       "value": 12,
       "color": "#34D399",
-      "label": "1,200 kWh",
+      "label": "Renewable Energy",
       "animationFrequency": 4,
       "animationRate": 7,
       "animationSize": 5
@@ -168,7 +168,7 @@
       "target": "processing-plant-main",
       "value": 8,
       "color": "#6B7280",
-      "label": "50 kg",
+      "label": "CO₂ (Dry Ice)",
       "animationFrequency": 1,
       "animationRate": 3,
       "animationSize": 4
@@ -179,7 +179,7 @@
       "target": "chicken-meat",
       "value": 18,
       "color": "#10B981",
-      "label": "1,300 kg",
+      "label": "Chicken Meat",
       "animationFrequency": 3,
       "animationRate": 5,
       "animationSize": 4
@@ -190,7 +190,7 @@
       "target": "fog-to-ad",
       "value": 12,
       "color": "#8B5CF6",
-      "label": "200 kg",
+      "label": "FOG to AD",
       "animationFrequency": 3,
       "animationRate": 5,
       "animationSize": 4
@@ -201,7 +201,7 @@
       "target": "dead-to-ad",
       "value": 8,
       "color": "#B45309",
-      "label": "50 birds",
+      "label": "Dead Chickens to AD",
       "animationFrequency": 3,
       "animationRate": 5,
       "animationSize": 4
@@ -212,7 +212,7 @@
       "target": "clean-water",
       "value": 14,
       "color": "#22D3EE",
-      "label": "1,800 L",
+      "label": "Clean Water",
       "animationFrequency": 3,
       "animationRate": 6,
       "animationSize": 4
@@ -223,7 +223,7 @@
       "target": "reduced-ghg",
       "value": 6,
       "color": "#34D399",
-      "label": "90 kg CO₂",
+      "label": "Reduced GHG",
       "animationFrequency": 1,
       "animationRate": 4,
       "animationSize": 4
