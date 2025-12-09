@@ -17,6 +17,7 @@ interface DiagramNode {
   iconOnly?: boolean;
   showLabel?: boolean;
   fontSize?: number;
+  labelOffset?: number;
 }
 
 interface DiagramLink {
@@ -146,21 +147,29 @@ export function CircularSankeyHomepage({
         const gap = 30; // Gap from nodes
         // Use custom returnY if provided, otherwise calculate staggered position
         const returnY = (link as any).returnY;
-        const bottomY = returnY !== undefined
+        const loopY = returnY !== undefined
           ? returnY
           : Math.max(sy, ty) + 100 + stagger;
+        
+        // Determine if the loop goes above or below the connection points
+        const minConnectionY = Math.min(sy, ty);
+        const maxConnectionY = Math.max(sy, ty);
+        const isAbove = loopY < minConnectionY;
+        
+        // Use appropriate curve direction based on whether loop is above or below
+        const curveDir = isAbove ? -1 : 1; // -1 for upward curves, 1 for downward
         
         // If reverse is true, generate path from target to source (for text)
         if (reverse) {
           return `
             M ${tx} ${ty}
             L ${tx - gap} ${ty}
-            Q ${tx - gap - 20} ${ty} ${tx - gap - 20} ${ty + 20}
-            L ${tx - gap - 20} ${bottomY - 20}
-            Q ${tx - gap - 20} ${bottomY} ${tx - gap} ${bottomY}
-            L ${sx + gap} ${bottomY}
-            Q ${sx + gap + 20} ${bottomY} ${sx + gap + 20} ${bottomY - 20}
-            L ${sx + gap + 20} ${sy + 20}
+            Q ${tx - gap - 20} ${ty} ${tx - gap - 20} ${ty + (20 * curveDir)}
+            L ${tx - gap - 20} ${loopY - (20 * curveDir)}
+            Q ${tx - gap - 20} ${loopY} ${tx - gap} ${loopY}
+            L ${sx + gap} ${loopY}
+            Q ${sx + gap + 20} ${loopY} ${sx + gap + 20} ${loopY - (20 * curveDir)}
+            L ${sx + gap + 20} ${sy + (20 * curveDir)}
             Q ${sx + gap + 20} ${sy} ${sx + gap} ${sy}
             L ${sx} ${sy}
           `;
@@ -170,12 +179,12 @@ export function CircularSankeyHomepage({
         return `
           M ${sx} ${sy}
           L ${sx + gap} ${sy}
-          Q ${sx + gap + 20} ${sy} ${sx + gap + 20} ${sy + 20}
-          L ${sx + gap + 20} ${bottomY - 20}
-          Q ${sx + gap + 20} ${bottomY} ${sx + gap} ${bottomY}
-          L ${tx - gap} ${bottomY}
-          Q ${tx - gap - 20} ${bottomY} ${tx - gap - 20} ${bottomY - 20}
-          L ${tx - gap - 20} ${ty + 20}
+          Q ${sx + gap + 20} ${sy} ${sx + gap + 20} ${sy + (20 * curveDir)}
+          L ${sx + gap + 20} ${loopY - (20 * curveDir)}
+          Q ${sx + gap + 20} ${loopY} ${sx + gap} ${loopY}
+          L ${tx - gap} ${loopY}
+          Q ${tx - gap - 20} ${loopY} ${tx - gap - 20} ${loopY - (20 * curveDir)}
+          L ${tx - gap - 20} ${ty + (20 * curveDir)}
           Q ${tx - gap - 20} ${ty} ${tx - gap} ${ty}
           L ${tx} ${ty}
         `;
@@ -308,8 +317,11 @@ export function CircularSankeyHomepage({
         const lines = node.name.split(/<br\s*\/?>/i);
         const fontSize = node.fontSize || 12;
         const lineHeight = fontSize * 1.2;
-        const yBase = node.iconOnly ? node.height + 15 : node.height - 10;
-        const yOffset = lines.length > 1 ? -((lines.length - 1) * lineHeight) / 2 : 0;
+        const labelOffset = node.labelOffset || 0; // User-adjustable offset (matches BuilderCanvas)
+        // Position labels - matches BuilderCanvas logic exactly
+        const yBase = node.iconOnly ? node.height : (node.icon ? node.height - 10 : node.height / 2);
+        // Adjust y position to center multi-line text, plus user offset
+        const yOffset = (lines.length > 1 ? -((lines.length - 1) * lineHeight) / 2 : 0) + labelOffset;
         
         const textGroup = nodeGroup.append('text')
           .attr('x', node.width / 2)

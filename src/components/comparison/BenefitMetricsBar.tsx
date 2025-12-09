@@ -152,7 +152,7 @@ export const COMPONENT_METRICS: Record<string, BenefitMetric[]> = {
       category: 'environmental',
       label: 'Ammonia Reduction',
       value: '-90%',
-      description: 'Biochar-based litter dramatically reduces ammonia emissions',
+      description: 'Biochar-based litter dramatically reduces ammonia emissions at the poultry producer',
       icon: '😤'
     },
     {

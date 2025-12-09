@@ -5,7 +5,7 @@ import { useRouter, usePathname } from 'next/navigation';
 
 const COMPONENTS = [
   { id: 'farm', label: 'Farm Operations', icon: '🏡' },
-  { id: 'chicken-house', label: 'Chicken House', icon: '🏠' },
+  { id: 'chicken-house', label: 'Poultry Producer', icon: '🏠' },
   { id: 'processing-plant', label: 'Processing Plant', icon: '🏭' },
   { id: 'waterways', label: 'Waterways', icon: '💧' },
   { id: 'anaerobic-digester', label: 'Anaerobic Digester', icon: '🧪' },

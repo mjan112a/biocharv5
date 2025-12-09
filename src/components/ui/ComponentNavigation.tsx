@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 
 const COMPONENTS = [
   { id: 'farm', label: 'Farm Operations' },
-  { id: 'chicken-house', label: 'Chicken House' },
+  { id: 'chicken-house', label: 'Poultry Producer' },
   { id: 'processing-plant', label: 'Processing Plant' },
   { id: 'anaerobic-digester', label: 'Anaerobic Digester' },
   { id: 'pyrolysis-unit', label: 'Pyrolysis Unit' },

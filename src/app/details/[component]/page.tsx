@@ -31,9 +31,9 @@ const COMPONENT_CONFIG = {
     hasCurrentSystem: true
   },
   'chicken-house': {
-    name: 'Chicken House',
+    name: 'Poultry Producer',
     icon: '/images/iconslibrary/chicken-house-01.svg',
-    description: 'Detailed analysis of poultry housing environments, focusing on litter management, ammonia reduction, and bird health optimization.',
+    description: 'Detailed analysis of poultry producer operations, focusing on litter management, ammonia reduction, and bird health optimization.',
     currentDiagram: chickenHouseCurrentData,
     proposedDiagram: chickenHouseProposedData,
     hasCurrentSystem: true

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { getTooltipForIcon, getTooltipContext, TooltipData, TooltipContext } from '@/lib/tooltipLoader';
 
 interface IconTooltipProps {
@@ -13,9 +13,9 @@ interface IconTooltipProps {
 
 /**
  * IconTooltip Component
- * 
+ *
  * Displays rich tooltip content for icons based on loaded tooltip data.
- * Automatically positions itself relative to cursor.
+ * Automatically positions itself relative to cursor with smart boundary detection.
  */
 export default function IconTooltip({
   iconPath,
@@ -27,6 +27,8 @@ export default function IconTooltip({
   const [tooltipData, setTooltipData] = useState<TooltipData | null>(null);
   const [tooltipContext, setTooltipContext] = useState<TooltipContext | null>(null);
   const [loading, setLoading] = useState(false);
+  const [position, setPosition] = useState({ left: 0, top: 0 });
+  const tooltipRef = useRef<HTMLDivElement>(null);
 
   // Load tooltip data when icon changes
   useEffect(() => {
@@ -46,18 +48,68 @@ export default function IconTooltip({
     });
   }, [iconPath, context, visible]);
 
+  // Calculate optimal position after tooltip renders
+  useLayoutEffect(() => {
+    if (!visible || !tooltipRef.current) return;
+
+    const tooltip = tooltipRef.current;
+    const tooltipRect = tooltip.getBoundingClientRect();
+    const tooltipWidth = tooltipRect.width || 350; // Fallback width
+    const tooltipHeight = tooltipRect.height || 300; // Fallback height
+    
+    // Get viewport dimensions
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    
+    // Offset from cursor
+    const offset = 15;
+    const padding = 20; // Minimum distance from viewport edge
+    
+    // Calculate initial position (prefer bottom-right of cursor)
+    let left = x + offset;
+    let top = y + offset;
+    
+    // Check if tooltip would overflow right edge
+    if (left + tooltipWidth > viewportWidth - padding) {
+      // Flip to left side of cursor
+      left = x - tooltipWidth - offset;
+    }
+    
+    // Check if tooltip would overflow bottom edge
+    if (top + tooltipHeight > viewportHeight - padding) {
+      // Flip to above cursor
+      top = y - tooltipHeight - offset;
+    }
+    
+    // Ensure tooltip doesn't go off left edge
+    if (left < padding) {
+      left = padding;
+    }
+    
+    // Ensure tooltip doesn't go off top edge
+    if (top < padding) {
+      top = padding;
+    }
+    
+    // Final clamp to ensure tooltip stays fully visible
+    left = Math.min(left, viewportWidth - tooltipWidth - padding);
+    top = Math.min(top, viewportHeight - tooltipHeight - padding);
+    
+    setPosition({ left, top });
+  }, [x, y, visible, tooltipData]);
+
   if (!visible || !tooltipData || !tooltipContext) {
     return null;
   }
 
-  // Position tooltip - offset from cursor to avoid blocking
   const tooltipStyle = {
-    left: `${x + 15}px`,
-    top: `${y + 15}px`,
+    left: `${position.left}px`,
+    top: `${position.top}px`,
   };
 
   return (
     <div
+      ref={tooltipRef}
       className="fixed z-[9999] max-w-md pointer-events-none"
       style={tooltipStyle}
     >

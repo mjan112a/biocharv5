@@ -131,6 +131,11 @@
           "name": "Water",
           "file": "water-01.svg",
           "keywords": "water, liquid, h2o"
+        },
+        {
+          "name": "Water Runoff",
+          "file": "water-runoff-03.svg",
+          "keywords": "water, runoff, drainage, stormwater, pollution, environmental"
         }
       ]
     },

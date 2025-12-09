@@ -63,7 +63,7 @@
       "width": 180,
       "height": 150,
       "color": "#10B981",
-      "icon": "/images/iconslibrary/farms-01.svg",
+      "icon": "/images/iconslibrary/farm-01.svg",
       "iconOnly": true,
       "showLabel": true
     },
@@ -99,7 +99,7 @@
       "width": 80,
       "height": 80,
       "color": "#059669",
-      "icon": "/images/iconslibrary/co2-reduction-01.svg",
+      "icon": "/images/iconslibrary/C02-01.svg",
       "iconOnly": true,
       "showLabel": true
     }

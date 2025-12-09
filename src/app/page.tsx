@@ -61,7 +61,7 @@ export default function HomePage() {
       <main className="w-full space-y-0">
         {/* Hero Section */}
         <section className="w-full">
-          <div className="relative h-[500px] overflow-hidden group border-b border-border">
+          <div className="relative h-[500px] overflow-hidden group">
             {/* Background Image */}
             <div className="absolute inset-0">
               <Image
@@ -77,7 +77,7 @@ export default function HomePage() {
             </div>
 
             {/* Content */}
-            <div className="relative h-full flex items-center px-12">
+            <div className="relative h-full max-w-[1440px] mx-auto flex items-center px-6 lg:px-12">
               <div className="max-w-3xl border-l-4 border-primary pl-8">
                 <div className="flex items-center gap-2 text-primary mb-2">
                   <span className="inline-block w-2 h-2 bg-primary animate-pulse" />
@@ -99,90 +99,127 @@ export default function HomePage() {
               BIOCHAR INNOVATIONS INC. // V2.0
             </div>
           </div>
+          {/* Accent Bar */}
+          <div className="w-full h-1 bg-gradient-to-r from-primary via-emerald-400 to-primary" />
         </section>
 
-        {/* Introduction Section */}
-        <section className="w-full bg-card border-b border-border py-16 px-6 lg:px-12">
-          <div className="max-w-[1440px] mx-auto relative">
-            <div className="absolute top-0 left-0 w-2 h-full bg-primary -ml-6 lg:-ml-12" />
-            <h2 className="text-4xl font-bold mb-8 text-foreground">
-              Poultry Waste to Value: A Circular Solution
-            </h2>
-            
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  The poultry industry generates <strong>40+ million tonnes of waste annually</strong>. Our integrated system transforms <strong>100% of poultry litter</strong> into biochar, renewable energy, and organic fertilizer.
-                </p>
-                <div className="flex items-center gap-4">
-                   <div className="flex flex-col border border-border p-4 bg-secondary/30 min-w-[140px]">
-                     <span className="text-xs text-muted-foreground font-bold uppercase tracking-wider">Carbon Impact</span>
-                     <span className="text-2xl font-bold text-primary">Net Negative</span>
-                   </div>
-                   <div className="flex flex-col border border-border p-4 bg-secondary/30 min-w-[140px]">
-                     <span className="text-xs text-muted-foreground font-bold uppercase tracking-wider">Waste Output</span>
-                     <span className="text-2xl font-bold text-primary">0%</span>
-                   </div>
+        {/* Introduction Section - Full Bleed with Emerald Background */}
+        <section className="w-full bg-gradient-to-b from-emerald-50/50 to-emerald-50/20">
+          <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 relative">
+            <div className="absolute top-0 left-6 lg:left-12 w-1 h-full bg-gradient-to-b from-primary to-primary/20" />
+            <div className="pl-6">
+              <h2 className="text-4xl font-bold mb-8 text-foreground">
+                Poultry Waste to Value: A Circular Solution
+              </h2>
+              
+              <div className="grid md:grid-cols-2 gap-12">
+                <div>
+                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                    The poultry industry generates <strong>40+ million tonnes of waste annually</strong>. Our integrated system transforms <strong>100% of poultry litter</strong> into biochar, renewable energy, and organic fertilizer.
+                  </p>
+                  <div className="flex items-center gap-4">
+                     <div className="flex flex-col border border-border p-4 bg-white/60 backdrop-blur-sm min-w-[140px]">
+                       <span className="text-xs text-muted-foreground font-bold uppercase tracking-wider">Carbon Impact</span>
+                       <span className="text-2xl font-bold text-primary">Net Negative</span>
+                     </div>
+                     <div className="flex flex-col border border-border p-4 bg-white/60 backdrop-blur-sm min-w-[140px]">
+                       <span className="text-xs text-muted-foreground font-bold uppercase tracking-wider">Waste Output</span>
+                       <span className="text-2xl font-bold text-primary">0%</span>
+                     </div>
+                  </div>
                 </div>
-              </div>
-              <div className="bg-secondary/10 p-6 flex flex-col justify-center border border-border">
-                <p className="text-sm text-muted-foreground font-medium">
-                  <span className="text-primary font-bold text-lg block mb-2">💡 Interactive Diagram</span>
-                  Use the toggle below to compare current practices with our proposed circular system. Click on component icons to explore detailed metrics.
-                </p>
+                <div className="bg-white/60 backdrop-blur-sm p-6 flex flex-col justify-center border border-border">
+                  <p className="text-sm text-muted-foreground font-medium">
+                    <span className="text-primary font-bold text-lg block mb-2">💡 Interactive Diagram</span>
+                    Use the toggle below to compare current practices with our proposed circular system. Click on component icons to explore detailed metrics.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* System Toggle & Diagram */}
-        <section className="w-full py-12 px-6 lg:px-12 bg-secondary/30">
-          <div className="max-w-[1440px] mx-auto bg-card border border-border shadow-sm">
-            {/* Header Bar */}
-            <div className="p-6 flex items-center justify-between border-b border-border">
-              <div>
-                <h2 className="text-2xl font-bold text-foreground">
-                  System Comparison
-                </h2>
-                <p className="text-sm text-muted-foreground mt-1">
-                  {showProposed ? 'Proposed Biochar Circular Model' : 'Current Linear Waste Model'}
-                </p>
+        <section className="w-full bg-gradient-to-b from-slate-100 to-slate-50">
+          <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-12">
+            <div className="bg-card border border-border shadow-lg">
+            <div className="px-6 py-6">
+              {/* Sankey Diagram with Toggle */}
+              <div className="border border-border bg-white/50 backdrop-blur-sm shadow-inner">
+                {/* Diagram Title Bar with Toggle */}
+                <div className={`p-4 flex items-center justify-between border-b-2 transition-all duration-300 ${
+                  showProposed
+                    ? 'border-primary bg-primary/10'
+                    : 'border-destructive bg-destructive/10'
+                }`}>
+                  {/* Title */}
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">{showProposed ? '✨' : '⚠️'}</span>
+                    <div>
+                      <h2 className={`text-2xl font-bold uppercase tracking-wide ${
+                        showProposed ? 'text-primary' : 'text-destructive'
+                      }`}>
+                        {showProposed ? 'Proposed System' : 'Current System'}
+                      </h2>
+                      <p className="text-sm text-muted-foreground">
+                        {showProposed ? 'Biochar Circular Economy Model' : 'Linear Waste Model'}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Toggle Buttons */}
+                  <div className="flex bg-white border-2 border-gray-300 p-1 shadow-sm rounded-lg">
+                    <button
+                      onClick={() => setShowProposed(false)}
+                      className={`px-6 py-2.5 text-sm font-bold transition-all duration-200 flex items-center gap-2 rounded-md ${
+                        !showProposed
+                          ? 'bg-red-500 text-white shadow-md'
+                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      }`}
+                    >
+                      <span>⚠️</span>
+                      Current
+                    </button>
+                    <button
+                      onClick={() => setShowProposed(true)}
+                      className={`px-6 py-2.5 text-sm font-bold transition-all duration-200 flex items-center gap-2 rounded-md ${
+                        showProposed
+                          ? 'bg-green-600 text-white shadow-md'
+                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      }`}
+                    >
+                      <span>✨</span>
+                      Proposed
+                    </button>
+                  </div>
+                </div>
+
+                {/* Diagram Container */}
+                <div className="p-4">
+                  <CircularSankeyHomepage
+                    diagramData={showProposed ? proposedSystemData : currentSystemData}
+                    width={1000}
+                    height={850}
+                  />
+                </div>
+
+                {/* Legend */}
+                <div className="border-t border-border bg-slate-50 p-4 flex justify-between items-center">
+                  <div className="text-xs font-mono text-muted-foreground">
+                    <span className="mr-4">LEGEND:</span>
+                    <span className="mr-4">● NODES: COMPONENT SYSTEMS</span>
+                    <span className="mr-4">〰 LINES: MASS FLOW</span>
+                    <span className="mr-4">⟳ ANIMATION: DIRECTIONALITY</span>
+                  </div>
+                </div>
               </div>
 
-              {/* Toggle Buttons */}
-              <div className="flex bg-secondary/50 p-1">
-                <button
-                  onClick={() => setShowProposed(false)}
-                  className={`px-6 py-2.5 text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
-                    !showProposed
-                      ? 'bg-white text-destructive shadow-sm'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  <span>⚠️</span>
-                  Current
-                </button>
-                <button
-                  onClick={() => setShowProposed(true)}
-                  className={`px-6 py-2.5 text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
-                    showProposed
-                      ? 'bg-white text-primary shadow-sm'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  <span>✨</span>
-                  Proposed
-                </button>
-              </div>
-            </div>
-
-            <div className="px-6 pb-8">
-              {/* Status Cards */}
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
+              {/* Status Cards - Now below diagram */}
+              <div className="grid md:grid-cols-2 gap-6 mt-8">
                 {/* Current System Card */}
                 <div className={`p-6 border transition-all ${
-                  !showProposed 
-                    ? 'border-destructive/30 bg-destructive/5 ring-1 ring-destructive/20' 
+                  !showProposed
+                    ? 'border-destructive/30 bg-destructive/5 ring-1 ring-destructive/20'
                     : 'border-border bg-secondary/10 opacity-60'
                 }`}>
                   <h3 className="font-bold text-destructive mb-4 flex items-center gap-2">
@@ -207,8 +244,8 @@ export default function HomePage() {
                 
                 {/* Proposed System Card */}
                 <div className={`p-6 border transition-all ${
-                  showProposed 
-                    ? 'border-primary/30 bg-primary/5 ring-1 ring-primary/20' 
+                  showProposed
+                    ? 'border-primary/30 bg-primary/5 ring-1 ring-primary/20'
                     : 'border-border bg-secondary/10 opacity-60'
                 }`}>
                   <h3 className="font-bold text-primary mb-4 flex items-center gap-2">
@@ -231,36 +268,18 @@ export default function HomePage() {
                   </ul>
                 </div>
               </div>
-
-              {/* Sankey Diagram */}
-              <div className="border border-border bg-white/50 backdrop-blur-sm p-8 shadow-inner">
-                {/* Diagram Container */}
-                <div>
-                  <CircularSankeyHomepage
-                    diagramData={showProposed ? proposedSystemData : currentSystemData}
-                    width={1000}
-                    height={850}
-                  />
-                </div>
-
-                {/* Legend */}
-                <div className="border-t border-border bg-secondary/20 p-4 flex justify-between items-center">
-                  <div className="text-xs font-mono text-muted-foreground">
-                    <span className="mr-4">LEGEND:</span>
-                    <span className="mr-4">● NODES: COMPONENT SYSTEMS</span>
-                    <span className="mr-4">〰 LINES: MASS FLOW</span>
-                    <span className="mr-4">⟳ ANIMATION: DIRECTIONALITY</span>
-                  </div>
-                </div>
-              </div>
             </div>
+          </div>
           </div>
         </section>
 
         {/* Key Benefits Section */}
         {showProposed && (
-          <section className="w-full py-16 px-6 lg:px-12 bg-card border-t border-border">
-            <div className="max-w-[1440px] mx-auto grid md:grid-cols-3 gap-8">
+          <section className="w-full bg-white">
+            {/* Top accent bar */}
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+            <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-16">
+              <div className="grid md:grid-cols-3 gap-8">
               {/* Environmental */}
               <div className="bg-card p-8 border border-border hover:border-primary/50 transition-colors group">
                 <div className="w-12 h-12 bg-primary/10 flex items-center justify-center text-2xl mb-6 text-primary group-hover:scale-110 transition-transform duration-300">🌍</div>
@@ -321,15 +340,18 @@ export default function HomePage() {
                 </ul>
               </div>
             </div>
+            </div>
           </section>
         )}
 
       </main>
 
       {/* Call to Action Footer */}
-      <footer className="relative border-t border-border bg-slate-950 text-slate-50 w-full">
-        <div className="relative w-full px-6 lg:px-12 py-20">
-          <div className="max-w-[1440px] mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <footer className="relative bg-slate-950 text-slate-50 w-full">
+        {/* Top accent bar */}
+        <div className="w-full h-1 bg-gradient-to-r from-primary via-emerald-400 to-primary" />
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-20">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold mb-4 text-white">
                 Waste Hub <span className="text-primary font-light">Bioloop™</span>
@@ -370,7 +392,7 @@ export default function HomePage() {
         </div>
         
         {/* Copyright Bar */}
-        <div className="border-t border-slate-900 bg-black w-full">
+        <div className="border-t border-slate-800 bg-slate-900/50 w-full">
           <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-4 flex justify-between items-center">
             <p className="text-xs text-slate-600 font-mono">
               © 2025 WASTE HUB SYSTEMS. ALL RIGHTS RESERVED.
