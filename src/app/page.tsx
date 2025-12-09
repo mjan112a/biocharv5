@@ -31,29 +31,6 @@ export default function HomePage() {
             <TitleDropdown />
           </div>
           
-          {/* Navigation Links */}
-          <nav className="flex items-center justify-between mt-4 border-t border-border pt-3">
-            <div className="flex items-center gap-4">
-              <Link
-                href="/trial-results"
-                className="text-sm font-medium text-muted-foreground hover:text-primary px-3 py-2 hover:bg-secondary/50 transition-colors border border-transparent hover:border-border"
-              >
-                📊 Trial Results
-              </Link>
-              <Link
-                href="/intellectual-property"
-                className="text-sm font-medium text-muted-foreground hover:text-primary px-3 py-2 hover:bg-secondary/50 transition-colors border border-transparent hover:border-border"
-              >
-                🔒 Intellectual Property
-              </Link>
-              <Link
-                href="/oldpage"
-                className="text-sm font-medium text-muted-foreground hover:text-primary px-3 py-2 hover:bg-secondary/50 transition-colors border border-transparent hover:border-border"
-              >
-                📄 Old Homepage
-              </Link>
-            </div>
-          </nav>
         </div>
       </header>
 
@@ -115,7 +92,7 @@ export default function HomePage() {
               <div className="grid md:grid-cols-2 gap-12">
                 <div>
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    The poultry industry generates <strong>40+ million tonnes of waste annually</strong>. Our integrated system transforms <strong>100% of poultry litter</strong> into biochar, renewable energy, and organic fertilizer.
+                    The poultry industry generates <strong>significant waste annually</strong>. Our integrated system transforms <strong>poultry litter</strong> into biochar, renewable energy, and organic fertilizer.
                   </p>
                   <div className="flex items-center gap-4">
                      <div className="flex flex-col border border-border p-4 bg-white/60 backdrop-blur-sm min-w-[140px]">
@@ -124,7 +101,7 @@ export default function HomePage() {
                      </div>
                      <div className="flex flex-col border border-border p-4 bg-white/60 backdrop-blur-sm min-w-[140px]">
                        <span className="text-xs text-muted-foreground font-bold uppercase tracking-wider">Waste Output</span>
-                       <span className="text-2xl font-bold text-primary">0%</span>
+                       <span className="text-2xl font-bold text-primary">Minimal</span>
                      </div>
                   </div>
                 </div>
@@ -229,7 +206,7 @@ export default function HomePage() {
                   <ul className="space-y-3">
                     <li className="flex items-center gap-3 text-sm text-foreground/80">
                       <span className="w-6 h-6 bg-destructive/10 flex items-center justify-center text-destructive text-xs font-bold">!</span>
-                      High ammonia emissions (+90%)
+                      High ammonia emissions
                     </li>
                     <li className="flex items-center gap-3 text-sm text-foreground/80">
                       <span className="w-6 h-6 bg-destructive/10 flex items-center justify-center text-destructive text-xs font-bold">!</span>
@@ -237,7 +214,7 @@ export default function HomePage() {
                     </li>
                     <li className="flex items-center gap-3 text-sm text-foreground/80">
                       <span className="w-6 h-6 bg-destructive/10 flex items-center justify-center text-destructive text-xs font-bold">!</span>
-                      100% fossil fuel dependency
+                      Heavy fossil fuel dependency
                     </li>
                   </ul>
                 </div>
@@ -255,7 +232,7 @@ export default function HomePage() {
                   <ul className="space-y-3">
                     <li className="flex items-center gap-3 text-sm text-foreground/80">
                       <span className="w-6 h-6 bg-primary/10 flex items-center justify-center text-primary text-xs font-bold">✓</span>
-                      90% ammonia reduction
+                      Significant ammonia reduction
                     </li>
                     <li className="flex items-center gap-3 text-sm text-foreground/80">
                       <span className="w-6 h-6 bg-primary/10 flex items-center justify-center text-primary text-xs font-bold">✓</span>
@@ -263,7 +240,7 @@ export default function HomePage() {
                     </li>
                     <li className="flex items-center gap-3 text-sm text-foreground/80">
                       <span className="w-6 h-6 bg-primary/10 flex items-center justify-center text-primary text-xs font-bold">✓</span>
-                      100% energy self-sufficient
+                      More energy self-sufficient
                     </li>
                   </ul>
                 </div>
@@ -291,7 +268,7 @@ export default function HomePage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 bg-primary mt-1.5" />
-                    95% reduction in water pollution
+                    Significant reduction in water pollution
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 bg-primary mt-1.5" />
@@ -307,15 +284,15 @@ export default function HomePage() {
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 bg-blue-500 mt-1.5" />
-                    Carbon credits: $177/tonne CO₂
+                    Carbon credit eligible
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 bg-blue-500 mt-1.5" />
-                    100% energy independence
+                    Greater energy independence
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 bg-blue-500 mt-1.5" />
-                    Eliminate disposal costs
+                    Reduce disposal costs
                   </li>
                 </ul>
               </div>
@@ -335,7 +312,7 @@ export default function HomePage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 bg-amber-500 mt-1.5" />
-                    25-37% more biogas production
+                    Increased biogas production
                   </li>
                 </ul>
               </div>

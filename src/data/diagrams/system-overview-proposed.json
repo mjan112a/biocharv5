@@ -1,4 +1,10 @@
 {
+  "metadata": {
+    "title": "Proposed System Overview",
+    "description": "Enhanced poultry system with biochar and circular economy features",
+    "type": "overview",
+    "system": "proposed"
+  },
   "nodes": [
     {
       "id": "chicken-house",
@@ -23,7 +29,8 @@
       "color": "#3B82F6",
       "icon": "/images/iconslibrary/chicken-processing-plant-03.svg",
       "iconOnly": true,
-      "showLabel": true
+      "showLabel": true,
+      "labelOffset": -19
     },
     {
       "id": "anaerobic-digester",
@@ -64,14 +71,15 @@
     {
       "id": "waterways",
       "name": "Waterways",
-      "x": 873.7396538750941,
-      "y": 462.3648364937268,
+      "x": 889.5410082768999,
+      "y": 428.6659164581199,
       "width": 145,
       "height": 150,
       "color": "#06B6D4",
       "icon": "/images/iconslibrary/waterways-01.svg",
       "iconOnly": true,
-      "showLabel": true
+      "showLabel": true,
+      "labelOffset": -18
     },
     {
       "id": "fresh-bedding",
@@ -139,9 +147,9 @@
     },
     {
       "id": "co2-output",
-      "name": "CO2<br/>(Captured)",
-      "x": 741.5500376222724,
-      "y": 239.3076806798905,
+      "name": "Renewable CO2",
+      "x": 740.7975921745674,
+      "y": 232.80438032214178,
       "color": "#6B7280",
       "width": 50,
       "height": 50,
@@ -210,12 +218,13 @@
       "height": 50,
       "icon": "/images/iconslibrary/water-01.svg",
       "iconOnly": true,
-      "showLabel": true
+      "showLabel": true,
+      "labelOffset": 11
     },
     {
       "id": "meat-output",
       "name": "Meat<br/>(+Yield)",
-      "x": 921.2836719337848,
+      "x": 891.9382994732882,
       "y": 291.7736273702951,
       "color": "#DC2626",
       "width": 60,
@@ -227,14 +236,16 @@
     {
       "id": "ghg-plant",
       "name": "GHG<br/>(Reduced)",
-      "x": 919.6388261851015,
-      "y": 218.08790876568298,
+      "x": 885.7787810383746,
+      "y": 212.76702665479766,
       "color": "#9CA3AF",
       "width": 50,
       "height": 50,
       "iconOnly": true,
       "showLabel": true,
-      "icon": "/images/iconslibrary/GHG-01.svg"
+      "icon": "/images/iconslibrary/GHG-01.svg",
+      "labelOffset": 11,
+      "fontSize": 11
     },
     {
       "id": "ghg-farm",
@@ -252,14 +263,15 @@
     {
       "id": "crops-output",
       "name": "Crops<br/>(+Yield)",
-      "x": 919.9774266365688,
-      "y": 684.2901291590387,
+      "x": 921.4823175319789,
+      "y": 690.2022203933557,
       "color": "#10B981",
       "width": 58,
       "height": 62,
       "iconOnly": true,
       "showLabel": true,
-      "icon": "/images/iconslibrary/crops-corn-01.svg"
+      "icon": "/images/iconslibrary/crops-corn-01.svg",
+      "labelOffset": 8
     }
   ],
   "links": [
@@ -363,7 +375,7 @@
       "source": "processing-plant",
       "target": "anaerobic-digester",
       "value": 8,
-      "color": "#92400E",
+      "color": "#EAB308",
       "label": "FOG",
       "animationFrequency": 1,
       "animationRate": 4,
@@ -371,7 +383,7 @@
       "particleIconSource": "custom",
       "particleType": "icon",
       "particleIcon": "/images/iconslibrary/fog-fats-oils-greases-01.svg",
-      "returnY": 366.2194695913604
+      "returnY": 365.037051344497
     },
     {
       "id": "link-plant-to-meat",

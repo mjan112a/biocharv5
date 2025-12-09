@@ -54,46 +54,60 @@ export default function IconTooltip({
 
     const tooltip = tooltipRef.current;
     const tooltipRect = tooltip.getBoundingClientRect();
-    const tooltipWidth = tooltipRect.width || 350; // Fallback width
-    const tooltipHeight = tooltipRect.height || 300; // Fallback height
+    // Use actual measured dimensions or reasonable defaults
+    const tooltipWidth = Math.max(tooltipRect.width, 300);
+    const tooltipHeight = Math.max(tooltipRect.height, 200);
     
     // Get viewport dimensions
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
     
     // Offset from cursor
-    const offset = 15;
-    const padding = 20; // Minimum distance from viewport edge
+    const offset = 20;
+    const padding = 10; // Minimum distance from viewport edge
     
-    // Calculate initial position (prefer bottom-right of cursor)
-    let left = x + offset;
-    let top = y + offset;
+    // Determine which side of the viewport we're on
+    const isRightSide = x > viewportWidth / 2;
+    const isBottomHalf = y > viewportHeight / 2;
     
-    // Check if tooltip would overflow right edge
-    if (left + tooltipWidth > viewportWidth - padding) {
-      // Flip to left side of cursor
+    let left: number;
+    let top: number;
+    
+    // Horizontal positioning - prefer to show on opposite side of center
+    if (isRightSide) {
+      // Cursor is on right side - show tooltip to the LEFT of cursor
       left = x - tooltipWidth - offset;
+      // Make sure we don't go off left edge
+      if (left < padding) {
+        left = padding;
+      }
+    } else {
+      // Cursor is on left side - show tooltip to the RIGHT of cursor
+      left = x + offset;
+      // Make sure we don't go off right edge
+      if (left + tooltipWidth > viewportWidth - padding) {
+        left = viewportWidth - tooltipWidth - padding;
+      }
     }
     
-    // Check if tooltip would overflow bottom edge
-    if (top + tooltipHeight > viewportHeight - padding) {
-      // Flip to above cursor
+    // Vertical positioning
+    if (isBottomHalf) {
+      // Cursor is in bottom half - show tooltip ABOVE cursor
       top = y - tooltipHeight - offset;
+      if (top < padding) {
+        top = padding;
+      }
+    } else {
+      // Cursor is in top half - show tooltip BELOW cursor
+      top = y + offset;
+      if (top + tooltipHeight > viewportHeight - padding) {
+        top = viewportHeight - tooltipHeight - padding;
+      }
     }
     
-    // Ensure tooltip doesn't go off left edge
-    if (left < padding) {
-      left = padding;
-    }
-    
-    // Ensure tooltip doesn't go off top edge
-    if (top < padding) {
-      top = padding;
-    }
-    
-    // Final clamp to ensure tooltip stays fully visible
-    left = Math.min(left, viewportWidth - tooltipWidth - padding);
-    top = Math.min(top, viewportHeight - tooltipHeight - padding);
+    // Final safety clamps
+    left = Math.max(padding, Math.min(left, viewportWidth - tooltipWidth - padding));
+    top = Math.max(padding, Math.min(top, viewportHeight - tooltipHeight - padding));
     
     setPosition({ left, top });
   }, [x, y, visible, tooltipData]);

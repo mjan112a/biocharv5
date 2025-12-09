@@ -8,17 +8,11 @@
   "tooltips": {
     "chicken-house-01": {
       "title": "Chicken House",
-      "short_description": "28,000-60,000 birds per cycle",
+      "short_description": "Commercial poultry production facility",
       "contexts": {
         "current": {
           "title": "Chicken House - Current System",
-          "description": "28,000-60,000 birds per cycle",
-          "performance": {
-            "mortality": "1.4-1.6% typical",
-            "fcr": "1.39 (feed:gain ratio)",
-            "body_weight": "1,812 g at 35 days",
-            "ammonia_emissions": "13.6-14.6 g/bird"
-          },
+          "description": "Standard commercial poultry operation",
           "problems": [
             "High ammonia damages bird respiratory health",
             "Moisture management difficult with standard bedding",
@@ -30,19 +24,13 @@
           "title": "Poultry Producer - Biochar Enhanced",
           "description": "Transform your poultry operation with biochar technology",
           "key_benefits": {
-            "revenue_increase": "+$0.12-0.18/bird from improved performance",
-            "mortality_reduction": "1-3% fewer bird losses",
-            "weight_gain": "+58g per bird at 35 days",
-            "air_quality": "90% ammonia reduction"
-          },
-          "performance": {
-            "mortality": "1.0-1.4% (down from 1.4-1.6%)",
-            "fcr": "1.38 (improved from 1.39)",
-            "body_weight": "1,870 g at 35 days",
-            "ammonia_emissions": "90% reduction"
+            "revenue_increase": "Improved bird performance",
+            "mortality_reduction": "Fewer bird losses",
+            "weight_gain": "Better growth rates",
+            "air_quality": "Significant ammonia reduction"
           },
           "how_it_works": [
-            "Biochar mixed at 5-10% by volume in bedding",
+            "Biochar mixed in bedding material",
             "Ammonia captured on biochar's porous surface",
             "Better air quality improves bird respiratory health",
             "Higher water intake = better feed conversion"
@@ -71,12 +59,12 @@
           "title": "Processing Plant - Biogas Powered",
           "description": "Renewable energy from on-site biogas",
           "improvements": [
-            "Biogas replaces natural gas",
-            "On-site electricity generation: 550 kWh/day (50,000 birds)",
+            "Biogas can replace natural gas",
+            "Potential for on-site electricity generation",
             "Waste heat utilization",
-            "Energy independence achieved"
+            "Greater energy independence"
           ],
-          "value": "Net-negative carbon emissions possible"
+          "value": "Reduced carbon emissions"
         }
       }
     },
@@ -87,65 +75,48 @@
       "contexts": {
         "current": {
           "title": "Processing Plant - Current Problems",
-          "description": "Standard poultry processing with significant environmental and cost issues",
-          "performance": {
-            "energy_source": "100% fossil fuels (natural gas + grid)",
-            "annual_energy_cost": "$500K - $1M",
-            "waste_disposal_cost": "$50-100/tonne FOG disposal"
-          },
+          "description": "Standard poultry processing with environmental and cost challenges",
           "problems": [
             "High energy costs from fossil fuel dependency",
             "Significant GHG emissions from natural gas combustion",
             "FOG waste sent to expensive disposal or landfill",
-            "No recovery of waste heat - energy inefficiency",
+            "Limited recovery of waste heat - energy inefficiency",
             "Price volatility exposure on energy costs",
             "Dead birds and offal create disposal liabilities",
             "Wastewater treatment costs and regulatory compliance"
           ]
         },
         "proposed": {
-          "title": "Processing Plant - Energy Independent",
-          "description": "Achieve energy self-sufficiency with integrated biogas system",
+          "title": "Processing Plant - More Energy Independent",
+          "description": "Move toward energy self-sufficiency with integrated biogas system",
           "key_benefits": {
-            "energy_savings": "$500K-1M annual cost reduction",
-            "energy_independence": "100% on-site renewable power",
-            "carbon_credits": "$50-150K additional annual revenue",
-            "waste_elimination": "Zero FOG disposal costs"
-          },
-          "performance": {
-            "energy_source": "100% on-site biogas + syngas",
-            "electricity_generation": "550 kWh/day per 50,000 birds",
-            "waste_recovery": "100% of FOG and organic waste valorized",
-            "emissions": "Net-negative carbon footprint"
+            "energy_savings": "Significant cost reduction potential",
+            "energy_independence": "More on-site renewable power",
+            "carbon_credits": "Potential additional revenue",
+            "waste_elimination": "Reduced FOG disposal costs"
           },
           "revenue_streams": [
-            "Energy cost savings: $6-12/MMBTU vs natural gas",
-            "D3 RIN credits: +$3-5/MMBTU",
-            "CA LCFS credits: +$2-4/MMBTU",
-            "Avoided FOG disposal: $50-100/tonne"
+            "Energy cost savings vs natural gas",
+            "Potential carbon credit revenue",
+            "Avoided FOG disposal costs"
           ],
-          "bottom_line": "Energy independence + new revenue streams"
+          "bottom_line": "Greater energy independence + new revenue potential"
         }
       }
     },
 
     "anaerobic-digester-01": {
       "title": "Anaerobic Digester",
-      "short_description": "Two-stage biogas production system",
+      "short_description": "Biogas production system",
       "contexts": {
         "proposed": {
           "title": "Anaerobic Digester - Renewable Energy Hub",
           "description": "Convert waste streams into valuable biogas and fertilizer",
           "key_benefits": {
-            "biogas_production": "50-82 kg methane per tonne litter",
-            "methane_boost": "25-37% increase with biochar enhancement",
-            "pathogen_destruction": "100% at thermophilic temperatures",
-            "fertilizer_output": "500+ kg organic digestate per tonne"
-          },
-          "configuration": {
-            "stage_1": "Thermophilic 55°C - destroys pathogens",
-            "stage_2": "Mesophilic 35°C - maximizes methane",
-            "total_retention": "3-5 days average"
+            "biogas_production": "Methane from organic waste",
+            "methane_boost": "Increased production with biochar enhancement",
+            "pathogen_destruction": "High-temperature treatment kills pathogens",
+            "fertilizer_output": "Organic digestate output"
           },
           "feedstocks_accepted": [
             "Used poultry litter",
@@ -154,7 +125,7 @@
             "Other organic waste streams"
           ],
           "outputs": {
-            "biogas": "50-65% methane, upgradable to RNG",
+            "biogas": "Methane-rich gas, upgradable to RNG",
             "digestate_liquid": "Organic liquid fertilizer",
             "digestate_solid": "Compostable fiber material"
           },
@@ -171,28 +142,18 @@
           "title": "Pyrolysis Unit - Biochar Production",
           "description": "Transform litter into biochar, syngas, and bio-oils",
           "key_benefits": {
-            "biochar_production": "160-200 kg per tonne input",
-            "syngas_energy": "Self-powering - no external fuel needed",
-            "nutrient_recovery": "75-85% P and K preserved in biochar",
-            "carbon_sequestration": "65-89% carbon stable for 100+ years"
-          },
-          "operation": {
-            "temperature": "400-600°C (500°C optimal)",
-            "atmosphere": "Oxygen-limited pyrolysis",
-            "retention": "30-60 minutes"
-          },
-          "outputs_per_tonne_litter": {
-            "biochar": "160-200 kg (40-50%) - $80-150/tonne bulk",
-            "bio_oil": "112-120 kg (28-30%) - renewable fuel",
-            "syngas": "88-120 kg (22-30%) - powers the system"
+            "biochar_production": "Significant biochar output",
+            "syngas_energy": "Self-powering potential - minimal external fuel needed",
+            "nutrient_recovery": "P and K preserved in biochar",
+            "carbon_sequestration": "Stable carbon for long-term storage"
           },
           "energy_integration": [
             "Syngas combustion heats the reactor",
-            "Waste heat dries incoming wet litter",
-            "Thermally self-sufficient operation",
+            "Waste heat can dry incoming wet litter",
+            "Thermally self-sufficient operation possible",
             "Excess energy available for other uses"
           ],
-          "bottom_line": "Create carbon credits while producing valuable products"
+          "bottom_line": "Potential carbon credits while producing valuable products"
         }
       }
     },
@@ -205,30 +166,24 @@
           "title": "Biochar - The Core Innovation",
           "description": "Stable carbon material that drives the entire circular system",
           "key_benefits": {
-            "ammonia_control": "90% reduction in chicken house",
-            "methane_boost": "25-37% more biogas in digester",
-            "soil_improvement": "Better water retention + 54-97% N₂O reduction",
-            "carbon_sequestration": "Permanent CO₂ removal for centuries"
+            "ammonia_control": "Significant reduction in chicken house",
+            "methane_boost": "Increased biogas in digester",
+            "soil_improvement": "Better water retention + reduced N₂O",
+            "carbon_sequestration": "Permanent CO₂ removal potential"
           },
           "properties": {
-            "carbon_content": "42-47% stable carbon",
-            "surface_area": "50-2,430 m²/g (highly porous)",
-            "stability": "65-89% remains after 100 years",
+            "carbon_content": "High stable carbon content",
+            "surface_area": "Highly porous structure",
+            "stability": "Long-term carbon storage",
             "nutrients": "P, K, and micronutrients preserved"
           },
-          "revenue_streams": {
-            "bulk_agricultural": "$80-150/tonne",
-            "premium_retail": "$600-1,300/tonne",
-            "carbon_credits": "$177-525/tonne CO₂ sequestered",
-            "performance_bonus": "Additional value from improved bird metrics"
-          },
           "multiple_uses": [
-            "Poultry bedding additive (5-10%)",
-            "Anaerobic digester enhancer (5-20 g/L)",
+            "Poultry bedding additive",
+            "Anaerobic digester enhancer",
             "Soil amendment for farms",
-            "Carbon credit generation"
+            "Carbon credit potential"
           ],
-          "bottom_line": "One product, multiple revenue streams + environmental benefits"
+          "bottom_line": "One product, multiple benefits + environmental value"
         }
       }
     },
@@ -239,9 +194,8 @@
       "contexts": {
         "both": {
           "title": "Live Chickens - Input",
-          "description": "Day-old chicks arriving for grow-out cycle",
-          "typical_cycle": "35-42 days to market weight",
-          "scale": "28,000-60,000 birds per house typical"
+          "description": "Chicks arriving for grow-out cycle",
+          "typical_cycle": "5-6 weeks to market weight"
         }
       }
     },
@@ -252,11 +206,9 @@
       "contexts": {
         "current": {
           "title": "Poultry Litter - Waste Problem",
-          "quantity": "~0.5 lb per bird per cycle (40+ million tonnes/year USA)",
-          "composition": "2-6% nitrogen, 1-3% phosphorus, 15-17 MJ/kg energy",
+          "description": "Large volumes of waste generated annually",
           "disposal": {
             "method": "Land application or landfill",
-            "cost": "$10-30/tonne disposal cost",
             "problems": [
               "Over-application causes nutrient runoff",
               "Ammonia volatilization loses nitrogen",
@@ -267,19 +219,12 @@
         },
         "proposed": {
           "title": "Poultry Litter - Revenue Generating Resource",
-          "description": "Transform disposal cost into multiple revenue streams",
+          "description": "Transform disposal cost into revenue streams",
           "key_benefits": {
-            "disposal_savings": "$10-30/tonne avoided cost",
-            "product_value": "$50-150/tonne in products",
-            "nutrient_recovery": "95% P, 70% N preserved",
-            "carbon_credits": "$177-525/tonne CO₂"
-          },
-          "outputs_per_tonne": {
-            "biochar": "160-200 kg - bedding + soil + carbon credits",
-            "bio_oil": "112-120 kg - renewable liquid fuel",
-            "syngas": "88-120 kg - powers the system",
-            "methane": "50-82 kg - RNG fuel",
-            "digestate": "506-556 kg - organic fertilizer"
+            "disposal_savings": "Avoided disposal costs",
+            "product_value": "Value from products",
+            "nutrient_recovery": "P and N preserved",
+            "carbon_credits": "Carbon sequestration potential"
           },
           "economic_transformation": [
             "Disposal liability → revenue asset",
@@ -287,7 +232,7 @@
             "Carbon sequestered permanently",
             "Multiple product revenue streams"
           ],
-          "bottom_line": "Every tonne of 'waste' becomes valuable products"
+          "bottom_line": "Waste becomes valuable products"
         }
       }
     },
@@ -298,25 +243,19 @@
       "contexts": {
         "proposed": {
           "title": "Bio-Methane - Premium Renewable Gas",
-          "description": "High-value renewable natural gas with stacking incentives",
+          "description": "Renewable natural gas with incentive potential",
           "key_benefits": {
-            "energy_value": "$6-12/MMBTU base price",
-            "rin_credits": "+$3-5/MMBTU (D3 pathway)",
-            "lcfs_credits": "+$2-4/MMBTU (California)",
-            "total_value": "$11-21/MMBTU with incentives"
-          },
-          "production": {
-            "raw_biogas": "50-65% methane from digester",
-            "upgraded_rng": "84.6-94.8% purity for pipeline",
-            "yield": "50-82 kg methane per tonne litter"
+            "energy_value": "Competitive with natural gas",
+            "incentives": "Potential federal and state credits",
+            "renewable": "Carbon-neutral fuel source"
           },
           "revenue_stacking": [
-            "Base natural gas price replacement",
-            "D3 RIN credits (federal)",
-            "CA LCFS credits (California)",
-            "Potential state incentives"
+            "Natural gas price replacement",
+            "Federal RIN credit potential",
+            "State incentive programs",
+            "Carbon credit eligibility"
           ],
-          "bottom_line": "Turn waste into premium renewable fuel + multiple incentive streams"
+          "bottom_line": "Turn waste into premium renewable fuel + incentive potential"
         }
       }
     },
@@ -327,33 +266,24 @@
       "contexts": {
         "current": {
           "title": "Meat Products - Standard Performance",
-          "description": "Standard broiler production metrics",
-          "performance": {
-            "fcr": "1.39 (feed:gain ratio)",
-            "mortality": "1.4-1.6% typical"
-          }
+          "description": "Standard broiler production metrics"
         },
         "proposed": {
-          "title": "Chicken Meat - Premium Quality",
+          "title": "Chicken Meat - Improved Quality",
           "description": "Better bird health produces higher quality meat",
           "key_benefits": {
-            "weight_gain": "+58g per bird at 35 days",
-            "mortality_reduction": "1-3% fewer losses",
-            "fcr_improvement": "1.38 vs 1.39 baseline",
+            "weight_gain": "Better growth rates",
+            "mortality_reduction": "Fewer losses",
+            "fcr_improvement": "Better feed conversion",
             "quality": "Healthier birds = better meat"
           },
           "improvements": [
-            "+58g per bird at 35 days (+3.2% yield)",
-            "Improved FCR from 1.39 to 1.38",
-            "1-3% mortality reduction",
+            "Improved weight gain potential",
+            "Better feed conversion ratio",
+            "Reduced mortality",
             "Better meat quality from healthier birds",
             "Reduced respiratory disease markers"
           ],
-          "economic_impact": {
-            "per_bird_value": "+$0.12-0.18 per bird",
-            "annual_facility": "+$50-100K per 50,000 bird facility",
-            "market_premium": "Potential for premium positioning"
-          },
           "bottom_line": "Better yields from healthier, faster-growing birds"
         }
       }
@@ -364,10 +294,9 @@
       "short_description": "Liquid organic fertilizer from digestion",
       "contexts": {
         "proposed": {
-          "title": "Digestate Liquids - Premium Organic Fertilizer",
+          "title": "Digestate Liquids - Organic Fertilizer",
           "description": "Nutrient-rich liquid from anaerobic digestion",
           "key_benefits": {
-            "volume": "500+ kg per tonne litter input",
             "nutrient_content": "N, P, K in plant-available form",
             "pathogen_free": "Thermophilic treatment kills pathogens",
             "odor_reduced": "Much less odor than raw litter"
@@ -375,16 +304,11 @@
           "characteristics": [
             "Slow-release organic nutrients",
             "Lower ammonia volatilization than raw litter",
-            "100% pathogen-free from thermophilic treatment",
+            "Pathogen-free from thermophilic treatment",
             "Balanced NPK matches crop needs",
             "Improves soil biology and structure"
           ],
-          "economic_value": {
-            "fertilizer_replacement": "50-75% less synthetic fertilizer",
-            "application_flexibility": "Easier to handle than raw litter",
-            "regulatory_advantage": "No pathogen concerns"
-          },
-          "bottom_line": "Premium organic fertilizer from waste stream"
+          "bottom_line": "Quality organic fertilizer from waste stream"
         }
       }
     },
@@ -397,14 +321,14 @@
           "title": "Crops - Enhanced Yields",
           "description": "Biochar and digestate boost crop production",
           "key_benefits": {
-            "yield_increase": "10-30% improvement documented",
-            "water_efficiency": "20-40% less irrigation needed",
-            "fertilizer_savings": "50-75% reduction possible",
-            "added_value": "$125-239 per tonne biochar"
+            "yield_increase": "Improved yields documented",
+            "water_efficiency": "Less irrigation needed",
+            "fertilizer_savings": "Reduced synthetic fertilizer",
+            "added_value": "Value from biochar application"
           },
           "improvements": [
-            "Biochar improves soil water retention 20-40%",
-            "Reduced N₂O emissions (54-97%) from soil",
+            "Biochar improves soil water retention",
+            "Reduced N₂O emissions from soil",
             "Better nutrient utilization and retention",
             "Proven yield increases in field trials",
             "Improved drought resilience"
@@ -412,7 +336,7 @@
           "circular_connection": {
             "feed_production": "Crops become chicken feed",
             "closing_loop": "Nutrients return to food production",
-            "carbon_farming": "Soil carbon credits available"
+            "carbon_farming": "Soil carbon credits potential"
           },
           "bottom_line": "Better crops with lower inputs - the circular economy works"
         }
@@ -437,17 +361,17 @@
           "title": "Farms - Regenerative Agriculture",
           "description": "Transform farmland with biochar and digestate application",
           "key_benefits": {
-            "yield_increase": "$125-239 added value per tonne biochar",
-            "water_savings": "20-40% less irrigation needed",
-            "fertilizer_reduction": "50-75% less synthetic fertilizer",
-            "emissions_cut": "54-97% reduction in N₂O"
+            "yield_increase": "Added value from biochar",
+            "water_savings": "Less irrigation needed",
+            "fertilizer_reduction": "Less synthetic fertilizer",
+            "emissions_cut": "Reduced N₂O emissions"
           },
           "improvements": [
-            "Biochar improves soil water retention by 20-40%",
+            "Biochar improves soil water retention",
             "Digestate provides slow-release organic nutrients",
-            "54-97% reduction in N₂O emissions (potent GHG)",
+            "Reduction in N₂O emissions (potent GHG)",
             "Better nutrient use efficiency reduces runoff",
-            "Carbon sequestration in soil for centuries"
+            "Carbon sequestration in soil for long term"
           ],
           "economic_impact": {
             "input_savings": "Lower fertilizer and water costs",
@@ -455,7 +379,7 @@
             "carbon_credits": "Eligible for agricultural carbon programs",
             "regulatory_compliance": "Meets environmental standards"
           },
-          "bottom_line": "Higher yields, lower costs, environmental compliance"
+          "bottom_line": "Better yields, lower costs, environmental compliance"
         }
       }
     },
@@ -476,22 +400,22 @@
         },
         "proposed": {
           "title": "Waterways - Protected & Restored",
-          "description": "Dramatic improvement in water quality through biochar system",
+          "description": "Improved water quality through biochar system",
           "key_benefits": {
-            "runoff_reduction": "95% less nutrient pollution",
-            "regulatory_compliance": "Meet TMDL and water quality standards",
-            "ecosystem_health": "Restored aquatic life and biodiversity",
+            "runoff_reduction": "Significantly less nutrient pollution",
+            "regulatory_compliance": "Help meet water quality standards",
+            "ecosystem_health": "Better aquatic life and biodiversity",
             "community_benefit": "Cleaner water for downstream users"
           },
           "improvements": [
-            "95% reduction in nutrient runoff to waterways",
+            "Significant reduction in nutrient runoff to waterways",
             "Biochar binds nutrients in soil, preventing leaching",
             "Reduced algal blooms and dead zones",
             "Lower phosphorus loading to sensitive watersheds",
             "Improved clarity and dissolved oxygen"
           ],
           "regulatory_benefits": [
-            "TMDL compliance achieved",
+            "TMDL compliance support",
             "Avoid EPA penalties and lawsuits",
             "Meet state water quality standards",
             "Maintain social license to operate"
@@ -508,7 +432,6 @@
         "both": {
           "title": "Pine Shavings - Bedding Material",
           "description": "Wood shavings used as poultry litter base",
-          "typical_use": "Applied at ~0.5 lb per bird per cycle",
           "properties": "Absorbent, provides cushioning, controls moisture"
         }
       }
@@ -521,8 +444,7 @@
         "both": {
           "title": "Chicken Feed - Nutritional Input",
           "description": "Complete feed for broiler production",
-          "composition": "Corn, soybeans, vitamins, minerals",
-          "fcr": "Feed Conversion Ratio ~1.38-1.39"
+          "composition": "Corn, soybeans, vitamins, minerals"
         }
       }
     },
@@ -542,11 +464,11 @@
           ]
         },
         "proposed": {
-          "title": "Renewable Energy - Independence",
+          "title": "Renewable Energy - Greater Independence",
           "improvements": [
-            "Biogas replaces natural gas",
-            "On-site energy generation",
-            "Stable, predictable costs",
+            "Biogas can replace natural gas",
+            "On-site energy generation potential",
+            "More stable, predictable costs",
             "Carbon credit revenue potential"
           ]
         }
@@ -570,9 +492,9 @@
         "proposed": {
           "title": "On-Site Power Generation",
           "improvements": [
-            "550 kWh/day from biogas (50,000 birds)",
-            "Combined heat and power (CHP)",
-            "Energy independence achieved",
+            "Electricity from biogas",
+            "Combined heat and power (CHP) potential",
+            "Greater energy independence",
             "Reduced operating costs"
           ]
         }
@@ -586,11 +508,6 @@
         "current": {
           "title": "Energy - Fossil Fuel Dependency",
           "description": "Grid electricity and natural gas for processing",
-          "performance": {
-            "source": "100% external (grid + natural gas)",
-            "cost": "$500K-1M annually",
-            "emissions": "117 lbs CO₂/MMBTU"
-          },
           "problems": [
             "High carbon footprint from fossil fuels",
             "Energy cost volatility",
@@ -599,432 +516,284 @@
           ]
         },
         "proposed": {
-          "title": "Energy - Complete Self-Sufficiency",
-          "description": "100% renewable on-site energy from waste streams",
+          "title": "Renewable Energy Integration",
+          "improvements": [
+            "On-site biogas and syngas production",
+            "Reduced fossil fuel dependency",
+            "Lower energy costs",
+            "Carbon credit eligibility"
+          ],
+          "bottom_line": "Move toward energy self-sufficiency"
+        }
+      }
+    },
+
+    "syngas-energy-01": {
+      "title": "Syngas",
+      "short_description": "Synthesis gas from pyrolysis",
+      "contexts": {
+        "proposed": {
+          "title": "Syngas - Process Heat & Power",
+          "description": "Combustible gas produced during pyrolysis",
           "key_benefits": {
-            "independence": "No fossil fuel purchases",
-            "savings": "$500K-1M annual cost reduction",
-            "reliability": "On-site generation, no grid dependence",
-            "carbon_negative": "Net-negative emissions with biochar"
+            "self_powering": "Makes pyrolysis thermally self-sufficient",
+            "heat_source": "Powers the pyrolysis reactor",
+            "excess_energy": "Additional energy for other uses"
           },
-          "energy_sources": {
-            "biogas": "From anaerobic digestion - heat/power",
-            "syngas": "From pyrolysis - reactor heat + power",
-            "bio_oils": "From pyrolysis - liquid fuel backup"
-          },
-          "performance": {
-            "electricity": "550 kWh/day per 50,000 birds",
-            "thermal": "100% of process heat needs",
-            "savings": "$6-12/MMBTU vs purchased natural gas"
-          },
-          "improvements": [
-            "Complete energy independence achieved",
-            "Biogas powers processing plant",
-            "Syngas powers pyrolysis (self-heating)",
-            "CHP systems maximize efficiency",
-            "Excess energy can be sold or exported"
-          ],
-          "bottom_line": "Transform from energy buyer to energy producer"
-        }
-      }
-    },
-
-    "fog-fats-oils-greases-01": {
-      "title": "Fats, Oils, and Greases (FOG)",
-      "short_description": "Processing plant wastewater byproduct",
-      "contexts": {
-        "current": {
-          "title": "FOG Waste - Disposal Problem",
-          "description": "Fats, oils, and greases from poultry processing",
-          "problems": [
-            "Disposal costs $50-100/tonne",
-            "Clogs municipal wastewater systems",
-            "Regulatory restrictions",
-            "Lost potential energy value"
-          ]
-        },
-        "proposed": {
-          "title": "FOG - Biogas Feedstock",
-          "improvements": [
-            "Added to anaerobic digester",
-            "Boosts methane production 15-25%",
-            "Zero disposal cost",
-            "Revenue from biogas production"
-          ],
-          "value": "Problem waste becomes valuable feedstock"
-        }
-      }
-    },
-
-    "fertilizer-01": {
-      "title": "Fertilizer",
-      "short_description": "Nutrients for crop production",
-      "contexts": {
-        "current": {
-          "title": "Chemical Fertilizers",
-          "description": "Synthetic nitrogen, phosphorus, potassium",
-          "problems": [
-            "High energy cost to produce",
-            "Price volatility",
-            "Rapid nutrient release causes runoff",
-            "No organic matter benefit"
-          ]
-        },
-        "proposed": {
-          "title": "Organic Digestate & Biochar",
-          "improvements": [
-            "Slow-release organic nutrients",
-            "Improves soil structure",
-            "Lower runoff risk",
-            "Carbon sequestration bonus"
-          ],
-          "value": "Sustainable, locally-produced nutrients"
-        }
-      }
-    },
-
-    "bio-oils-01": {
-      "title": "Bio-Oils",
-      "short_description": "Liquid fuel from pyrolysis",
-      "contexts": {
-        "proposed": {
-          "title": "Bio-Oils - Renewable Fuel",
-          "description": "Liquid hydrocarbons from thermal conversion",
-          "production": "28-30% of litter input (112-120 kg per 1,000 kg)",
-          "properties": "15-25 MJ/kg energy content, pH 2-4",
-          "applications": [
-            "Can be upgraded to transportation fuel",
-            "Used as boiler fuel",
-            "Chemical feedstock potential",
-            "Replaces petroleum products"
-          ],
-          "value": "Renewable liquid fuel with market value"
-        }
-      }
-    },
-
-    "C02-01": {
-      "title": "CO₂ Emissions",
-      "short_description": "Carbon dioxide greenhouse gas",
-      "contexts": {
-        "current": {
-          "title": "CO₂ Emissions - Climate Impact",
-          "description": "Greenhouse gas from fossil fuel combustion",
-          "sources": [
-            "Natural gas for heating",
-            "Grid electricity generation",
-            "Diesel for equipment",
-            "Transport fuel"
-          ],
-          "problems": [
-            "Contributes to climate change",
-            "No carbon credit eligibility",
-            "Increasing regulatory costs",
-            "Reputational risk"
-          ]
-        },
-        "proposed": {
-          "title": "Net-Negative Carbon",
-          "improvements": [
-            "Biochar sequesters CO₂ for centuries",
-            "Renewable energy replaces fossil fuels",
-            "Carbon credits: $177-525/tonne",
-            "Climate-positive operation"
-          ]
-        }
-      }
-    },
-
-    "dead-chickens-01": {
-      "title": "Dead Chickens",
-      "short_description": "Mortality during grow-out",
-      "contexts": {
-        "current": {
-          "title": "Mortality - Disposal Challenge",
-          "description": "Dead birds requiring disposal",
-          "rate": "1.4-1.6% mortality typical",
-          "disposal": [
-            "Composting",
-            "Rendering",
-            "Incineration costs",
-            "Biosecurity concerns"
-          ]
-        },
-        "proposed": {
-          "title": "Reduced Mortality",
-          "improvements": [
-            "1.0-1.4% rate (biochar benefits)",
-            "Better air quality reduces disease",
-            "Healthier birds, fewer losses",
-            "Can be processed in anaerobic digester"
-          ],
-          "value": "Improved bird health = higher revenue"
-        }
-      }
-    },
-
-    "diesel-01": {
-      "title": "Diesel Fuel",
-      "short_description": "Petroleum fuel for equipment",
-      "contexts": {
-        "current": {
-          "title": "Diesel - Operating Expense",
-          "description": "Fuel for tractors, spreaders, generators",
-          "problems": [
-            "Price volatility ($3-5/gallon)",
-            "High carbon emissions",
-            "Supply chain vulnerability",
-            "No renewable alternatives"
-          ]
-        },
-        "proposed": {
-          "title": "Biofuel Replacement",
-          "improvements": [
-            "Syngas can power generators",
-            "Bio-oils can substitute diesel",
-            "On-site production = price stability",
-            "Renewable fuel credits available"
-          ]
-        }
-      }
-    },
-
-    "digestate-solids-reduced-volume-01": {
-      "title": "Digestate Solids",
-      "short_description": "Solid organic fertilizer from digestion",
-      "contexts": {
-        "proposed": {
-          "title": "Digestate Solids - Soil Amendment",
-          "description": "Fiber-rich organic matter from anaerobic digestion",
-          "characteristics": [
-            "Pathogen-free after thermophilic treatment",
-            "Improved soil structure",
-            "Slow-release nutrients",
-            "Reduced volume vs raw litter"
-          ],
-          "application": "Can be composted, land-applied, or pelletized",
-          "value": "Premium organic fertilizer with low odor"
-        }
-      }
-    },
-
-    "farm-waterways-01": {
-      "title": "Farm Waterways",
-      "short_description": "On-farm water management",
-      "contexts": {
-        "current": {
-          "title": "Waterways - Pollution Risk",
-          "description": "Streams, ponds, drainage on farmland",
-          "problems": [
-            "Nutrient runoff from over-application",
-            "Sediment from erosion",
-            "Bacterial contamination",
-            "TMDL violations possible"
-          ]
-        },
-        "proposed": {
-          "title": "Protected Water Quality",
-          "improvements": [
-            "Biochar reduces runoff 95%",
-            "Better nutrient retention in soil",
-            "Cleaner water for downstream users",
-            "Regulatory compliance assured"
-          ]
+          "bottom_line": "Free energy that powers the system"
         }
       }
     },
 
     "GHG-01": {
-      "title": "Greenhouse Gas Emissions",
-      "short_description": "CO₂, CH₄, N₂O climate pollutants",
+      "title": "Greenhouse Gases",
+      "short_description": "Carbon emissions from operations",
       "contexts": {
         "current": {
-          "title": "GHG Emissions - Major Problem",
-          "description": "Multiple sources of climate-forcing gases",
-          "sources": [
-            "N₂O from litter application (310x CO₂ impact)",
-            "CH₄ from decomposing litter (25x CO₂ impact)",
-            "CO₂ from fossil fuel combustion",
-            "Ammonia volatilization"
-          ],
+          "title": "GHG Emissions - Current System",
+          "description": "Significant emissions from fossil fuels and decomposition",
           "problems": [
-            "Significant climate impact",
-            "Regulatory pressure increasing",
-            "No carbon credits available",
-            "Reputational liability"
+            "CO₂ from natural gas combustion",
+            "Methane from litter decomposition",
+            "N₂O from soil emissions",
+            "No carbon credit eligibility"
           ]
         },
         "proposed": {
-          "title": "GHG - Net-Negative Emissions",
-          "description": "Transform from climate problem to climate solution",
-          "key_benefits": {
-            "n2o_reduction": "54-97% less nitrous oxide from soil",
-            "methane_capture": "100% captured and used as fuel",
-            "carbon_sequestration": "Permanent CO₂ removal via biochar",
-            "carbon_credits": "$177-525 per tonne CO₂"
-          },
-          "emissions_eliminated": [
-            "N₂O from litter application (310x CO₂ impact) - 54-97% cut",
-            "CH₄ from decomposing litter (25x CO₂ impact) - captured",
-            "CO₂ from fossil fuels - replaced by biogas",
-            "Ammonia volatilization - captured in biochar"
+          "title": "GHG - Significantly Reduced",
+          "description": "Major reduction in greenhouse gas emissions",
+          "improvements": [
+            "Less fossil fuel combustion",
+            "Methane captured for energy instead of released",
+            "Reduced N₂O from soil with biochar application",
+            "Net-negative carbon potential through sequestration"
           ],
-          "carbon_credit_revenue": {
-            "standard_credits": "$177/tonne CO₂ (2025 market)",
-            "premium_biochar": "$400-525/tonne (co-benefits)",
-            "annual_potential": "$100-300K for typical operation"
-          },
-          "bottom_line": "Climate-positive operation with new revenue stream"
+          "bottom_line": "Transform from emitter to carbon-negative"
+        }
+      }
+    },
+
+    "GHG-icon-01": {
+      "title": "Greenhouse Gases (Reduced)",
+      "short_description": "Lower emissions in proposed system",
+      "contexts": {
+        "current": {
+          "title": "GHG Emissions - Current Problems",
+          "description": "High emissions from current operations",
+          "problems": [
+            "CO₂ from burning fossil fuels",
+            "Methane released from decomposing litter",
+            "Nitrous oxide from soil after litter application",
+            "Carbon footprint affects environmental compliance"
+          ]
+        },
+        "proposed": {
+          "title": "GHG - Reduced Emissions",
+          "description": "Significantly lower greenhouse gas output",
+          "improvements": [
+            "Biogas replaces fossil fuel combustion",
+            "Methane captured and used for energy",
+            "Biochar reduces soil N₂O emissions",
+            "Carbon sequestration offsets remaining emissions"
+          ],
+          "bottom_line": "Dramatically lower environmental impact"
         }
       }
     },
 
     "labor-01": {
       "title": "Labor",
-      "short_description": "Human workforce requirements",
+      "short_description": "Workforce requirements",
       "contexts": {
         "both": {
-          "title": "Labor - Workforce Needs",
-          "description": "Personnel for operations and maintenance",
-          "considerations": [
-            "Skilled operators for new equipment",
-            "Safety training requirements",
-            "Maintenance scheduling",
-            "Quality control monitoring"
-          ],
-          "note": "Biochar system creates local jobs in rural areas"
-        }
-      }
-    },
-
-    "litter-char-from-chicken-house-01": {
-      "title": "Litter with Biochar",
-      "short_description": "Bedding enhanced with biochar",
-      "contexts": {
-        "proposed": {
-          "title": "Biochar-Enhanced Bedding",
-          "description": "Pine shavings mixed with 5-10% biochar by volume",
-          "benefits": [
-            "90% reduction in ammonia emissions",
-            "Better moisture management",
-            "Improved air quality for birds and workers",
-            "Higher water intake = healthier birds"
-          ],
-          "performance": [
-            "1-3% mortality reduction",
-            "+58g per bird weight gain at 35 days",
-            "Improved feed conversion ratio",
-            "Reduced respiratory disease"
-          ],
-          "value": "Better bird performance = higher revenue"
-        }
-      }
-    },
-
-    "other-waste-01": {
-      "title": "Other Waste Streams",
-      "short_description": "Additional organic waste materials",
-      "contexts": {
-        "both": {
-          "title": "Other Organic Wastes",
-          "description": "Additional feedstocks for biogas or pyrolysis",
-          "examples": [
-            "Food processing waste",
-            "Agricultural residues",
-            "Yard waste",
-            "Organic municipal waste"
-          ],
-          "note": "System can co-process multiple waste streams for additional revenue"
-        }
-      }
-    },
-
-    "renewable-biofuels-01": {
-      "title": "Renewable Biofuels",
-      "short_description": "Sustainable energy from biomass",
-      "contexts": {
-        "proposed": {
-          "title": "Renewable Biofuels - Energy Independence",
-          "description": "Biogas, syngas, and bio-oils from organic waste",
-          "types": [
-            "Biomethane (50-65% methane content)",
-            "Syngas (CO + H₂ for heat/power)",
-            "Bio-oils (liquid fuel substitute)"
-          ],
-          "benefits": [
-            "100% renewable, carbon-neutral",
-            "On-site production = no transport",
-            "Stable costs vs fossil fuel volatility",
-            "D3 RIN and LCFS credit eligibility"
-          ],
-          "revenue": "$11-21/MMBTU with incentives"
-        }
-      }
-    },
-
-    "syngas-energy-01": {
-      "title": "Syngas Energy",
-      "short_description": "Synthesis gas for heat and power",
-      "contexts": {
-        "proposed": {
-          "title": "Syngas - Thermal Energy",
-          "description": "CO + H₂ gas from pyrolysis",
-          "production": "22-30% of litter input (88-120 kg per 1,000 kg)",
-          "energy_content": "4-6 MJ/Nm³",
-          "applications": [
-            "Powers pyrolysis reactor (self-heating)",
-            "Dries incoming litter",
-            "Electricity generation via engine/turbine",
-            "Process heat for operations"
-          ],
-          "value": "Free thermal energy, system self-sufficient"
+          "title": "Labor Input",
+          "description": "Skilled workers for operations"
         }
       }
     },
 
     "water-01": {
       "title": "Water",
-      "short_description": "Process water and irrigation",
+      "short_description": "Water usage in operations",
       "contexts": {
         "current": {
-          "title": "Water Use & Pollution",
-          "description": "Water for processing and contamination concerns",
+          "title": "Water - High Usage",
           "problems": [
-            "High processing water use",
+            "Significant water consumption",
             "Wastewater treatment costs",
-            "Nutrient pollution of waterways",
-            "Regulatory compliance challenges"
+            "Regulatory compliance requirements"
           ]
         },
         "proposed": {
-          "title": "Water Conservation & Quality",
+          "title": "Water - Efficient Usage",
           "improvements": [
-            "Reduced wastewater generation",
-            "95% reduction in nutrient runoff",
-            "Biochar improves soil water retention",
-            "Cleaner discharge to waterways"
-          ],
-          "value": "Lower water costs, better environmental compliance"
+            "Better water retention in soil with biochar",
+            "Reduced irrigation needs",
+            "Closed-loop water recycling potential"
+          ]
+        }
+      }
+    },
+
+    "fertilizer-01": {
+      "title": "Chemical Fertilizer",
+      "short_description": "Synthetic nutrient inputs",
+      "contexts": {
+        "current": {
+          "title": "Chemical Fertilizer - Current Usage",
+          "problems": [
+            "High cost",
+            "Energy-intensive production",
+            "Nutrient runoff risk",
+            "Soil degradation over time"
+          ]
+        },
+        "proposed": {
+          "title": "Reduced Fertilizer Needs",
+          "improvements": [
+            "Digestate replaces synthetic fertilizer",
+            "Biochar improves nutrient retention",
+            "Lower input costs",
+            "Better soil health long-term"
+          ]
+        }
+      }
+    },
+
+    "diesel-01": {
+      "title": "Diesel",
+      "short_description": "Fuel for equipment and transport",
+      "contexts": {
+        "current": {
+          "title": "Diesel - Fossil Fuel Dependency",
+          "problems": [
+            "High fuel costs",
+            "Carbon emissions",
+            "Price volatility"
+          ]
+        },
+        "proposed": {
+          "title": "Reduced Diesel Usage",
+          "improvements": [
+            "Bio-oil can supplement diesel",
+            "Less transport with on-site processing",
+            "Lower carbon footprint"
+          ]
+        }
+      }
+    },
+
+    "dead-chickens-01": {
+      "title": "Dead Birds",
+      "short_description": "Mortality from poultry operations",
+      "contexts": {
+        "current": {
+          "title": "Mortality - Disposal Problem",
+          "problems": [
+            "Disposal costs",
+            "Biosecurity concerns",
+            "Lost revenue"
+          ]
+        },
+        "proposed": {
+          "title": "Reduced Mortality + Better Disposal",
+          "improvements": [
+            "Lower mortality with biochar bedding",
+            "Dead birds become digester feedstock",
+            "Reduced disposal costs"
+          ]
+        }
+      }
+    },
+
+    "fog-fats-oils-greases-01": {
+      "title": "FOG (Fats, Oils, Greases)",
+      "short_description": "Processing plant waste stream",
+      "contexts": {
+        "current": {
+          "title": "FOG - Disposal Liability",
+          "problems": [
+            "Expensive disposal costs",
+            "Limited disposal options",
+            "Regulatory requirements"
+          ]
+        },
+        "proposed": {
+          "title": "FOG - Energy Feedstock",
+          "improvements": [
+            "Excellent digester feedstock",
+            "High methane yield",
+            "Turns cost into value"
+          ]
+        }
+      }
+    },
+
+    "C02-01": {
+      "title": "CO2",
+      "short_description": "Carbon dioxide",
+      "contexts": {
+        "proposed": {
+          "title": "CO2 - Captured Carbon",
+          "description": "Captured CO2 from biogas upgrading",
+          "uses": [
+            "Potential for sale or sequestration",
+            "Food-grade CO2 applications",
+            "Enhanced oil recovery"
+          ]
+        }
+      }
+    },
+
+    "bio-oils-01": {
+      "title": "Bio-Oils",
+      "short_description": "Liquid fuels from pyrolysis",
+      "contexts": {
+        "proposed": {
+          "title": "Bio-Oils - Renewable Fuel",
+          "description": "Liquid fuel byproduct from pyrolysis",
+          "benefits": [
+            "Renewable liquid fuel",
+            "Can supplement diesel",
+            "Additional revenue stream"
+          ]
         }
       }
     },
 
     "wood-vinegars-01": {
       "title": "Wood Vinegars",
-      "short_description": "Acidic liquid from pyrolysis condensate",
+      "short_description": "Pyrolysis liquid byproduct",
       "contexts": {
         "proposed": {
-          "title": "Wood Vinegar - Specialty Product",
-          "description": "Condensed pyrolysis vapors, pH 2-4",
-          "composition": "Acetic acid, phenols, organic compounds",
-          "applications": [
-            "Natural pesticide and herbicide",
-            "Soil conditioner and growth stimulant",
-            "Animal feed supplement",
-            "Industrial chemical feedstock"
+          "title": "Wood Vinegars - Specialty Product",
+          "description": "Acidic liquid from pyrolysis",
+          "uses": [
+            "Natural pesticide",
+            "Soil treatment",
+            "Specialty agricultural applications"
+          ]
+        }
+      }
+    },
+
+    "renewable-biofuels-01": {
+      "title": "Renewable Biofuels",
+      "short_description": "Clean energy from organic waste",
+      "contexts": {
+        "proposed": {
+          "title": "Renewable Biofuels - Clean Energy",
+          "description": "Multiple fuel products from waste streams",
+          "products": [
+            "Bio-methane (RNG)",
+            "Bio-oils",
+            "Syngas"
           ],
-          "market": "Premium product: $500-2,000/tonne in specialty markets",
-          "value": "High-value niche product from waste stream"
+          "benefits": [
+            "Carbon-neutral energy",
+            "Incentive program eligibility",
+            "Energy independence"
+          ]
         }
       }
     }
