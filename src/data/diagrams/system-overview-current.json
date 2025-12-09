@@ -1,4 +1,10 @@
 {
+  "metadata": {
+    "title": "Current System Overview",
+    "description": "Traditional poultry system without biochar enhancements",
+    "type": "overview",
+    "system": "current"
+  },
   "nodes": [
     {
       "id": "chicken-house",

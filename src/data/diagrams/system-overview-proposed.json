@@ -1,4 +1,10 @@
 {
+  "metadata": {
+    "title": "Proposed System Overview",
+    "description": "Biochar-enhanced circular system with anaerobic digestion and pyrolysis",
+    "type": "overview",
+    "system": "proposed"
+  },
   "nodes": [
     {
       "id": "chicken-house",
