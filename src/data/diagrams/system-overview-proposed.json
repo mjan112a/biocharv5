@@ -1,10 +1,4 @@
 {
-  "metadata": {
-    "title": "Proposed System Overview",
-    "description": "Biochar-enhanced circular system with anaerobic digestion and pyrolysis",
-    "type": "overview",
-    "system": "proposed"
-  },
   "nodes": [
     {
       "id": "chicken-house",
@@ -21,9 +15,9 @@
     },
     {
       "id": "processing-plant",
-      "name": "Processing<br/>Plant",
-      "x": 452.59593679458237,
-      "y": 387.2593762071919,
+      "name": "Processing Plant",
+      "x": 468.3972911963882,
+      "y": 370.1143116276726,
       "width": 150,
       "height": 150,
       "color": "#3B82F6",
@@ -45,7 +39,7 @@
     },
     {
       "id": "pyrolysis-unit",
-      "name": "Pyrolysis<br/>Unit",
+      "name": "Pyrolysis",
       "x": 650.3386004514673,
       "y": 257.77137674465473,
       "width": 120,
@@ -146,8 +140,8 @@
     {
       "id": "co2-output",
       "name": "CO2<br/>(Captured)",
-      "x": 772.4003009781791,
-      "y": 241.6725171736173,
+      "x": 741.5500376222724,
+      "y": 239.3076806798905,
       "color": "#6B7280",
       "width": 50,
       "height": 50,
