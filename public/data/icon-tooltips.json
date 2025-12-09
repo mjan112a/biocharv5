@@ -315,8 +315,18 @@
 
     "crops-corn-01": {
       "title": "Crops/Corn",
-      "short_description": "Agricultural output enhanced by biochar",
+      "short_description": "Agricultural crops from farmland",
       "contexts": {
+        "current": {
+          "title": "Crops - Standard Production",
+          "description": "Standard crop yields from conventional farming",
+          "problems": [
+            "Nutrient runoff from excess fertilizer application",
+            "Soil degradation over time from synthetic inputs",
+            "High water requirements for irrigation",
+            "GHG emissions from fertilizer production and N₂O"
+          ]
+        },
         "proposed": {
           "title": "Crops - Enhanced Yields",
           "description": "Biochar and digestate boost crop production",
