@@ -126,6 +126,23 @@ export default function IconTooltip({
           </p>
         )}
 
+        {/* Key Benefits (proposed system) - shown prominently at top */}
+        {tooltipContext.key_benefits && (
+          <div className="mb-3">
+            <h4 className="text-xs font-semibold text-green-600 uppercase mb-1">
+              💰 Key Benefits
+            </h4>
+            <div className="bg-green-50 rounded p-2 space-y-1">
+              {Object.entries(tooltipContext.key_benefits).map(([key, value]) => (
+                <div key={key} className="text-xs flex justify-between">
+                  <span className="text-gray-600 capitalize">{key.replace(/_/g, ' ')}:</span>
+                  <span className="text-green-700 font-bold">{String(value)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Performance Data */}
         {tooltipContext.performance && (
           <div className="mb-3">
@@ -143,7 +160,7 @@ export default function IconTooltip({
           </div>
         )}
 
-        {/* Problems */}
+        {/* Problems - only show for current context */}
         {tooltipContext.problems && tooltipContext.problems.length > 0 && (
           <div className="mb-3">
             <h4 className="text-xs font-semibold text-red-600 uppercase mb-1">
@@ -154,6 +171,23 @@ export default function IconTooltip({
                 <li key={idx} className="text-xs text-gray-700 flex items-start">
                   <span className="text-red-500 mr-1">⚠️</span>
                   <span>{problem}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* How It Works (proposed system) */}
+        {tooltipContext.how_it_works && tooltipContext.how_it_works.length > 0 && (
+          <div className="mb-3">
+            <h4 className="text-xs font-semibold text-blue-600 uppercase mb-1">
+              How It Works
+            </h4>
+            <ul className="space-y-1">
+              {tooltipContext.how_it_works.map((step: string, idx: number) => (
+                <li key={idx} className="text-xs text-gray-700 flex items-start">
+                  <span className="text-blue-500 mr-1">→</span>
+                  <span>{step}</span>
                 </li>
               ))}
             </ul>
@@ -194,11 +228,139 @@ export default function IconTooltip({
           </div>
         )}
 
+        {/* Revenue Streams (proposed system) */}
+        {tooltipContext.revenue_streams && tooltipContext.revenue_streams.length > 0 && (
+          <div className="mb-3">
+            <h4 className="text-xs font-semibold text-green-600 uppercase mb-1">
+              💵 Revenue Streams
+            </h4>
+            <ul className="space-y-1">
+              {tooltipContext.revenue_streams.map((stream: string, idx: number) => (
+                <li key={idx} className="text-xs text-gray-700 flex items-start">
+                  <span className="text-green-500 mr-1">$</span>
+                  <span>{stream}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Configuration (proposed system) */}
+        {tooltipContext.configuration && (
+          <div className="mb-3">
+            <h4 className="text-xs font-semibold text-purple-600 uppercase mb-1">
+              Configuration
+            </h4>
+            <div className="bg-purple-50 rounded p-2 space-y-1">
+              {Object.entries(tooltipContext.configuration).map(([key, value]) => (
+                <div key={key} className="text-xs flex justify-between">
+                  <span className="text-gray-600 capitalize">{key.replace(/_/g, ' ')}:</span>
+                  <span className="text-gray-900 font-medium">{String(value)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Operation (proposed system) */}
+        {tooltipContext.operation && (
+          <div className="mb-3">
+            <h4 className="text-xs font-semibold text-orange-600 uppercase mb-1">
+              Operation
+            </h4>
+            <div className="bg-orange-50 rounded p-2 space-y-1">
+              {Object.entries(tooltipContext.operation).map(([key, value]) => (
+                <div key={key} className="text-xs flex justify-between">
+                  <span className="text-gray-600 capitalize">{key.replace(/_/g, ' ')}:</span>
+                  <span className="text-gray-900 font-medium">{String(value)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Feedstocks Accepted (proposed system) */}
+        {tooltipContext.feedstocks_accepted && tooltipContext.feedstocks_accepted.length > 0 && (
+          <div className="mb-3">
+            <h4 className="text-xs font-semibold text-amber-600 uppercase mb-1">
+              Feedstocks Accepted
+            </h4>
+            <ul className="space-y-1">
+              {tooltipContext.feedstocks_accepted.map((feedstock: string, idx: number) => (
+                <li key={idx} className="text-xs text-gray-700 flex items-start">
+                  <span className="text-amber-500 mr-1">•</span>
+                  <span>{feedstock}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Outputs (proposed system) */}
+        {tooltipContext.outputs && (
+          <div className="mb-3">
+            <h4 className="text-xs font-semibold text-teal-600 uppercase mb-1">
+              Outputs
+            </h4>
+            <div className="bg-teal-50 rounded p-2 space-y-1">
+              {Object.entries(tooltipContext.outputs).map(([key, value]) => (
+                <div key={key} className="text-xs flex justify-between">
+                  <span className="text-gray-600 capitalize">{key.replace(/_/g, ' ')}:</span>
+                  <span className="text-gray-900 font-medium">{String(value)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Outputs Per Tonne Litter (proposed system) */}
+        {tooltipContext.outputs_per_tonne_litter && (
+          <div className="mb-3">
+            <h4 className="text-xs font-semibold text-teal-600 uppercase mb-1">
+              Outputs Per Tonne Litter
+            </h4>
+            <div className="bg-teal-50 rounded p-2 space-y-1">
+              {Object.entries(tooltipContext.outputs_per_tonne_litter).map(([key, value]) => (
+                <div key={key} className="text-xs flex justify-between">
+                  <span className="text-gray-600 capitalize">{key.replace(/_/g, ' ')}:</span>
+                  <span className="text-gray-900 font-medium">{String(value)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Energy Integration (proposed system) */}
+        {tooltipContext.energy_integration && tooltipContext.energy_integration.length > 0 && (
+          <div className="mb-3">
+            <h4 className="text-xs font-semibold text-yellow-600 uppercase mb-1">
+              ⚡ Energy Integration
+            </h4>
+            <ul className="space-y-1">
+              {tooltipContext.energy_integration.map((item: string, idx: number) => (
+                <li key={idx} className="text-xs text-gray-700 flex items-start">
+                  <span className="text-yellow-500 mr-1">⚡</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {/* Value/Economic */}
         {tooltipContext.value && (
-          <div className="bg-green-50 rounded p-2 border-l-4 border-green-500">
+          <div className="bg-green-50 rounded p-2 border-l-4 border-green-500 mb-3">
             <p className="text-xs font-semibold text-green-800">
               💰 {tooltipContext.value}
+            </p>
+          </div>
+        )}
+
+        {/* Bottom Line (proposed system) */}
+        {tooltipContext.bottom_line && (
+          <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded p-2 border-l-4 border-green-500">
+            <p className="text-xs font-bold text-green-800">
+              ✨ {tooltipContext.bottom_line}
             </p>
           </div>
         )}
