@@ -62,27 +62,23 @@ export default function IconTooltip({
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
     
-    // Offset from cursor - increased to ensure tooltip doesn't overlap with icon
-    const offset = 80; // Larger offset to clear typical icon sizes
-    const padding = 10; // Minimum distance from viewport edge
+    const padding = 20; // Minimum distance from viewport edge
     
     // Determine which side of the viewport we're on
     const isRightSide = x > viewportWidth / 2;
-    const isBottomHalf = y > viewportHeight / 2;
+    const isBottomArea = y > viewportHeight * 0.6; // Bottom 40% of viewport
     
     let left: number;
     let top: number;
     
-    // Horizontal positioning - prefer to show on opposite side of center
+    // Horizontal positioning - position on opposite side of viewport
     if (isRightSide) {
-      // Cursor is on right side - show tooltip to the LEFT of cursor
-      left = x - tooltipWidth - offset;
-      // Make sure we don't go off left edge
-      if (left < padding) {
-        left = padding;
-      }
+      // Cursor is on right side - show tooltip on far LEFT of viewport
+      // This ensures no overlap with right-side icons
+      left = padding;
     } else {
       // Cursor is on left side - show tooltip to the RIGHT of cursor
+      const offset = 100; // Distance from cursor
       left = x + offset;
       // Make sure we don't go off right edge
       if (left + tooltipWidth > viewportWidth - padding) {
@@ -90,36 +86,24 @@ export default function IconTooltip({
       }
     }
     
-    // Vertical positioning - center vertically relative to cursor when possible
-    // This keeps the tooltip from blocking the icon
-    top = y - tooltipHeight / 2;
-    
-    // Ensure tooltip stays within viewport bounds
-    if (top < padding) {
-      top = padding;
-    } else if (top + tooltipHeight > viewportHeight - padding) {
-      top = viewportHeight - tooltipHeight - padding;
-    }
-    
-    // Additional check: ensure tooltip doesn't overlap with cursor position
-    // by verifying there's enough horizontal distance
-    const tooltipRight = left + tooltipWidth;
-    const tooltipLeft = left;
-    const cursorBuffer = 60; // Minimum horizontal distance from cursor
-    
-    if (isRightSide) {
-      // Tooltip should be completely to the left of cursor
-      if (tooltipRight > x - cursorBuffer) {
-        left = x - tooltipWidth - cursorBuffer;
-        if (left < padding) left = padding;
+    // Vertical positioning
+    if (isBottomArea) {
+      // Cursor is in bottom area - position tooltip ABOVE the cursor
+      const verticalOffset = 80; // Distance above cursor
+      top = y - tooltipHeight - verticalOffset;
+      // Ensure we don't go above viewport
+      if (top < padding) {
+        top = padding;
       }
     } else {
-      // Tooltip should be completely to the right of cursor
-      if (tooltipLeft < x + cursorBuffer) {
-        left = x + cursorBuffer;
-        if (left + tooltipWidth > viewportWidth - padding) {
-          left = viewportWidth - tooltipWidth - padding;
-        }
+      // Normal positioning - center vertically relative to cursor
+      top = y - tooltipHeight / 2;
+      
+      // Ensure tooltip stays within viewport bounds
+      if (top < padding) {
+        top = padding;
+      } else if (top + tooltipHeight > viewportHeight - padding) {
+        top = viewportHeight - tooltipHeight - padding;
       }
     }
     

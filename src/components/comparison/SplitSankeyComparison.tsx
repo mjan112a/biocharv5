@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { CircularSankeyHomepage } from '@/components/d3/CircularSankeyHomepage';
-import { ComponentSelector } from '@/components/ui/ComponentSelector';
 
 interface DiagramData {
   metadata?: {
@@ -46,68 +45,48 @@ export function SplitSankeyComparison({
   const [showProposed, setShowProposed] = useState(true);
   
   return (
-    <div className={`bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl shadow-lg p-6 ${className}`}>
-      {/* Header with Toggle */}
-      <div className="mb-6 pb-4 border-b border-gray-200">
-        {/* Top Row: Title and Selector */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-1">{componentName}</h2>
-            <div className="md:hidden mt-2">
-              <ComponentSelector />
-            </div>
-          </div>
-          <div className="hidden md:block">
-            <ComponentSelector />
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between mb-3">
-          <div>
-            <p className="text-sm text-gray-600">
-              {showProposed
-                ? 'Biochar-integrated circular economy approach'
-                : 'Traditional approach with known challenges'
-              }
-            </p>
-          </div>
-
-          {/* Toggle Buttons - Only show if current diagram exists */}
-          {currentDiagram && (
-            <div className="inline-flex rounded-lg border-2 border-gray-300 bg-white p-1 shadow-sm">
+    <div className={`bg-card border border-border shadow-lg px-2 py-4 ${className}`}>
+      {/* Animated View Container with floating toggle */}
+      <div className="relative min-h-[700px]">
+        
+        {/* Floating Toggle - positioned on top of the diagram */}
+        {currentDiagram && (
+          <div className="absolute top-4 right-4 z-20">
+            <div className="flex bg-white border-2 border-gray-300 p-1 shadow-sm rounded-lg">
               <button
                 onClick={() => setShowProposed(false)}
-                className={`px-6 py-2 rounded-md text-sm font-semibold transition-all duration-200 ${
+                className={`px-6 py-2.5 text-sm font-bold transition-all duration-200 flex items-center gap-2 rounded-md ${
                   !showProposed
                     ? 'bg-red-500 text-white shadow-md'
-                    : 'text-gray-700 hover:bg-gray-100'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
-                ⚠️ Current
+                <span>⚠️</span>
+                Current
               </button>
               <button
                 onClick={() => setShowProposed(true)}
-                className={`px-6 py-2 rounded-md text-sm font-semibold transition-all duration-200 ${
+                className={`px-6 py-2.5 text-sm font-bold transition-all duration-200 flex items-center gap-2 rounded-md ${
                   showProposed
                     ? 'bg-green-600 text-white shadow-md'
-                    : 'text-gray-700 hover:bg-gray-100'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
-                ✅ Proposed
+                <span>✨</span>
+                Proposed
               </button>
             </div>
-          )}
-        </div>
+          </div>
+        )}
         
-        <p className="text-xs text-gray-500 italic">
-          {currentDiagram
-            ? '💡 Use the toggle above to switch between current and proposed systems'
-            : '💡 This component is new in the proposed system'}
-        </p>
-      </div>
-
-      {/* Animated View Container */}
-      <div className="relative min-h-[800px]">
+        {/* New component indicator */}
+        {!currentDiagram && (
+          <div className="absolute top-4 right-4 z-20">
+            <div className="bg-primary/10 text-primary px-4 py-2 rounded-lg text-sm font-medium shadow-sm border border-primary/20">
+              💡 New in proposed system
+            </div>
+          </div>
+        )}
         
         {/* Current System View */}
         {currentDiagram && (
@@ -118,24 +97,29 @@ export function SplitSankeyComparison({
                 : 'opacity-0 -translate-y-4 pointer-events-none'
             }`}
           >
-            <div className="border-4 border-red-500 bg-red-50 rounded-lg overflow-hidden h-full">
+            <div className="border border-border bg-white/50 backdrop-blur-sm shadow-inner overflow-hidden h-full">
               {/* Header */}
-              <div className="bg-red-100 border-b-2 border-red-300 px-4 py-3">
-                <h3 className="text-lg font-bold text-red-800 flex items-center gap-2">
-                  <span>⚠️</span>
-                  Current Practice
-                </h3>
-                <p className="text-xs text-gray-600 mt-1">
-                  Traditional approach with known challenges and inefficiencies
-                </p>
+              <div className="bg-destructive/10 border-b-2 border-destructive px-4 py-3">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">⚠️</span>
+                  <div>
+                    <h3 className="text-xl font-bold text-destructive uppercase tracking-wide">
+                      Current System
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      Linear Waste Model
+                    </p>
+                  </div>
+                </div>
               </div>
 
               {/* Content */}
-              <div className="p-2 bg-white min-h-[750px] flex items-center justify-center">
+              <div className="p-2 bg-white min-h-[600px] flex items-center justify-center">
                 <CircularSankeyHomepage
                   diagramData={currentDiagram}
-                  width={1200}
-                  height={700}
+                  width={1100}
+                  height={600}
+                  instanceId="current"
                 />
               </div>
             </div>
@@ -150,24 +134,29 @@ export function SplitSankeyComparison({
               : 'opacity-0 translate-y-4 pointer-events-none'
           }`}
         >
-          <div className="border-4 border-green-500 bg-green-50 rounded-lg overflow-hidden h-full">
+          <div className="border border-border bg-white/50 backdrop-blur-sm shadow-inner overflow-hidden h-full">
             {/* Header */}
-            <div className="bg-green-100 border-b-2 border-green-300 px-4 py-3">
-              <h3 className="text-lg font-bold text-green-800 flex items-center gap-2">
-                <span>✅</span>
-                Proposed System
-              </h3>
-              <p className="text-xs text-gray-600 mt-1">
-                Biochar-integrated circular economy with multiple environmental and economic benefits
-              </p>
+            <div className="bg-primary/10 border-b-2 border-primary px-4 py-3">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">✨</span>
+                <div>
+                  <h3 className="text-xl font-bold text-primary uppercase tracking-wide">
+                    Proposed System
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Biochar Circular Economy Model
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Content */}
-            <div className="p-2 bg-white min-h-[750px] flex items-center justify-center">
+            <div className="p-2 bg-white min-h-[600px] flex items-center justify-center">
               <CircularSankeyHomepage
                 diagramData={proposedDiagram}
-                width={1200}
-                height={700}
+                width={1100}
+                height={600}
+                instanceId="proposed"
               />
             </div>
           </div>
@@ -177,11 +166,11 @@ export function SplitSankeyComparison({
       {/* Status Indicator */}
       <div className={`mt-6 p-4 rounded border-l-4 transition-colors duration-300 ${
         showProposed
-          ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-green-600'
-          : 'bg-gradient-to-r from-red-50 to-orange-50 border-red-600'
+          ? 'bg-primary/5 border-primary'
+          : 'bg-destructive/5 border-destructive'
       }`}>
-        <p className="text-sm text-gray-800">
-          <span className="font-semibold">
+        <p className="text-sm text-foreground/80">
+          <span className={`font-semibold ${showProposed ? 'text-primary' : 'text-destructive'}`}>
             {showProposed ? '✨ Benefits:' : '⚠️ Current Challenges:'}
           </span>{' '}
           {showProposed

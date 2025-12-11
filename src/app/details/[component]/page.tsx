@@ -104,7 +104,7 @@ export default function ComponentDetailPage() {
     return config?.proposedDiagram as DiagramData;
   }, [config]);
 
-  const metrics = COMPONENT_METRICS[componentSlug] || [];
+  const benefits = COMPONENT_METRICS[componentSlug];
 
   if (!config) {
     return (
@@ -147,59 +147,44 @@ export default function ComponentDetailPage() {
       {/* Header */}
       <header className="bg-card border-b border-border shadow-sm sticky top-0 z-50 w-full">
         <div className="w-full px-8 py-4">
-          <div className="flex items-center gap-4">
-            <Image
-              src="/images/wastehub-logo.png"
-              alt="WasteHub"
-              width={200}
-              height={60}
-              className="h-12 w-auto"
-              priority
-            />
-            <div className="h-8 w-px bg-border" />
-            <div className="flex-1">
-              <Link 
-                href="/" 
-                className="text-sm text-muted-foreground hover:text-primary flex items-center gap-1 mb-1 transition-colors font-mono uppercase tracking-wide"
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <Link
+                href="/"
+                className="text-sm text-muted-foreground hover:text-primary flex items-center gap-1 transition-colors"
               >
                 <ArrowLeft size={16} />
-                Back to System View
+                Back
               </Link>
-              <h1 className="text-xl font-bold text-foreground flex items-center gap-3 uppercase tracking-tight">
-                <div className="relative w-12 h-12">
+              <div className="h-6 w-px bg-border" />
+              <h1 className="text-lg font-bold text-foreground flex items-center gap-2 uppercase tracking-tight">
+                <div className="relative w-8 h-8">
                   <Image src={config.icon} alt="" fill className="object-contain" />
                 </div>
-                {config.name} <span className="text-primary text-sm font-mono ml-2 opacity-75"> // DETAIL_VIEW</span>
+                {config.name}
               </h1>
+            </div>
+            <div className="flex items-center gap-4">
+              <span className="text-sm text-muted-foreground font-light">
+                a <span className="font-medium text-foreground">WasteHub</span> technology
+              </span>
+              <div className="h-8 w-px bg-border" />
+              <Image
+                src="/images/wastehub-logo.png"
+                alt="WasteHub"
+                width={160}
+                height={48}
+                className="h-10 w-auto"
+                priority
+              />
             </div>
           </div>
         </div>
       </header>
 
       <main className="w-full space-y-0">
-        {/* Hero Section */}
-        <section className="w-full bg-card border-b border-border py-16 px-8 relative overflow-hidden">
-          <div className="max-w-[1600px] mx-auto">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-12 -mt-12 blur-3xl" />
-            <div className="flex items-center gap-8 relative z-10">
-              <div className="flex-shrink-0 p-4 bg-secondary/30 border border-border shadow-sm w-24 h-24 relative flex items-center justify-center">
-                 <Image src={config.icon} alt={config.name} width={64} height={64} className="object-contain" />
-              </div>
-              <div className="flex-1">
-                <h2 className="text-3xl font-bold mb-2 text-foreground uppercase tracking-wide flex items-center gap-2">
-                  <span className="text-primary">›</span> {config.name}
-                </h2>
-                <p className="text-lg text-muted-foreground mb-4 leading-relaxed max-w-4xl">
-                  {/* @ts-ignore - description exists on updated config */}
-                  {config.description || `Detailed analysis of ${config.name.toLowerCase()} within the biochar circular economy system.`}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Split Sankey Comparison */}
-        <section className="w-full py-12 bg-secondary/30">
+        <section className="w-full py-6 bg-secondary/30">
           <div className="w-full px-8">
              <SplitSankeyComparison
                currentDiagram={currentDiagram}
@@ -209,35 +194,46 @@ export default function ComponentDetailPage() {
           </div>
         </section>
 
-        {/* Benefit Metrics */}
-        {metrics.length > 0 && (
-          <section className="w-full py-16 px-8 bg-card border-t border-border">
+        {/* Benefits Summary */}
+        {benefits && (
+          <section className="w-full py-12 px-8 bg-card border-t border-border">
             <div className="max-w-[1600px] mx-auto">
-              <BenefitMetricsBar metrics={metrics} />
+              <BenefitMetricsBar benefits={benefits} />
             </div>
           </section>
         )}
 
-        {/* Navigation Hint */}
-        <section className="w-full bg-slate-950 border-t border-slate-800 py-12 px-8">
-          <div className="max-w-[1600px] mx-auto flex items-center justify-center gap-4">
-            <span className="text-2xl animate-pulse">💡</span>
-            <p className="text-slate-400 font-mono text-sm">
-              <span className="text-primary font-bold mr-2">SYSTEM TIP:</span> 
-              CLICK COMPONENT NODES IN DIAGRAM TO NAVIGATE SUBSYSTEMS
-            </p>
-          </div>
-        </section>
       </main>
 
       {/* Footer */}
-      <footer className="bg-black border-t border-slate-900 w-full">
-        <div className="w-full px-12 py-6 flex justify-between items-center">
-          <p className="text-xs text-slate-600 font-mono">
-            © 2025 WASTE HUB SYSTEMS.
-          </p>
-          <div className="text-xs text-slate-600 font-mono">
-            SYSTEM ID: {componentSlug.toUpperCase()}
+      <footer className="relative bg-slate-950 text-slate-50 w-full">
+        <div className="w-full h-1 bg-gradient-to-r from-primary via-emerald-400 to-primary" />
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-12">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+              <h3 className="text-xl font-bold text-white mb-2">
+                Waste Hub <span className="text-primary font-light">Bioloop™</span>
+              </h3>
+              <p className="text-slate-500 text-sm">
+                Contact Calvin Wohlert at <a href="mailto:Cwohlert@waste-hub.com" className="text-primary hover:text-emerald-400 transition-colors">Cwohlert@waste-hub.com</a>
+              </p>
+            </div>
+            <a
+              href="mailto:Cwohlert@waste-hub.com?subject=Bioloop Inquiry"
+              className="bg-primary text-slate-950 font-bold px-6 py-2 hover:bg-emerald-400 transition-colors uppercase tracking-wider text-sm"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+        <div className="border-t border-slate-800 bg-slate-900/50 w-full">
+          <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-4 flex justify-between items-center">
+            <p className="text-xs text-slate-600 font-mono">
+              © 2025 WASTE HUB SYSTEMS. ALL RIGHTS RESERVED.
+            </p>
+            <div className="text-xs text-slate-600 font-mono">
+              {componentSlug.toUpperCase()}
+            </div>
           </div>
         </div>
       </footer>

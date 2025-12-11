@@ -58,6 +58,7 @@ interface CircularSankeyHomepageProps {
   width?: number;
   height?: number;
   enableNavigation?: boolean; // New prop to enable/disable click navigation
+  instanceId?: string; // Unique ID to prevent DOM ID collisions when multiple diagrams exist
 }
 
 // Mapping of node IDs to component detail page slugs
@@ -78,7 +79,8 @@ export function CircularSankeyHomepage({
   diagramData,
   width: initialWidth = 850,
   height = 700,
-  enableNavigation = true
+  enableNavigation = true,
+  instanceId = 'default'
 }: CircularSankeyHomepageProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -194,22 +196,23 @@ export function CircularSankeyHomepage({
     };
 
     // Create defs for path references (for textPath)
+    // Use instanceId to make IDs unique when multiple diagrams exist in DOM
     const defs = g.append('defs');
     diagramData.links.forEach((link, index) => {
       const sourceNode = nodeMap.get(link.source);
       const targetNode = nodeMap.get(link.target);
       const isReverse = targetNode && sourceNode && targetNode.x < sourceNode.x;
       
-      // Create normal path
+      // Create normal path with unique ID
       defs.append('path')
-        .attr('id', `link-path-${link.id}`)
+        .attr('id', `link-path-${instanceId}-${link.id}`)
         .attr('d', generateLinkPath(link, index, false))
         .attr('fill', 'none');
       
       // Create reversed path for text on loopback connections
       if (isReverse) {
         defs.append('path')
-          .attr('id', `link-path-${link.id}-text`)
+          .attr('id', `link-path-${instanceId}-${link.id}-text`)
           .attr('d', generateLinkPath(link, index, true))
           .attr('fill', 'none');
       }
@@ -245,7 +248,8 @@ export function CircularSankeyHomepage({
         // Check if this is a reverse/loopback connection
         const isReverse = targetNode && sourceNode && targetNode.x < sourceNode.x;
         // Use reversed path for text on loopback connections to keep text upright
-        const textPathId = isReverse ? `link-path-${link.id}-text` : `link-path-${link.id}`;
+        // Include instanceId for unique reference
+        const textPathId = isReverse ? `link-path-${instanceId}-${link.id}-text` : `link-path-${instanceId}-${link.id}`;
         
         linkGroup.append('text')
           .attr('font-size', '12')
@@ -436,7 +440,8 @@ export function CircularSankeyHomepage({
         if (!config) return;
 
         const { count, size, duration, useIcon, iconPath, linkGroup } = config;
-        const pathElement = document.getElementById(`link-path-${link.id}`) as unknown as SVGPathElement;
+        // Use instanceId for unique path element lookup
+        const pathElement = document.getElementById(`link-path-${instanceId}-${link.id}`) as unknown as SVGPathElement;
         const pathLength = pathElement?.getTotalLength() || 0;
         const startPoint = pathElement?.getPointAtLength(0) || { x: 0, y: 0 };
 

@@ -2,299 +2,173 @@
 
 import React from 'react';
 
-export interface BenefitMetric {
-  category: 'environmental' | 'economic' | 'operational' | 'overall';
-  label: string;
-  value: string; // e.g., "-90%", "+$50k/yr", "High"
-  description: string;
+export interface BenefitItem {
   icon: string;
+  text: string;
 }
 
-interface BenefitMetricsBarProps {
-  metrics: BenefitMetric[];
+export interface ComponentBenefits {
+  environmental: BenefitItem[];
+  economic: BenefitItem[];
+  operational: BenefitItem[];
+}
+
+interface BenefitsSummaryProps {
+  benefits: ComponentBenefits;
   className?: string;
 }
 
 /**
- * BenefitMetricsBar - Displays key improvement metrics in a visual horizontal bar
- * 
- * Shows 3-4 key metrics highlighting the benefits of the proposed system
- * with color-coded categories and large, easy-to-read numbers
+ * BenefitsSummary - Displays potential benefits in a clean, minimal design
+ *
+ * Shows categorized benefits without making specific claims
+ * Uses a subtle, professional appearance
  */
-export function BenefitMetricsBar({ metrics, className = '' }: BenefitMetricsBarProps) {
-  // Category styling
-  const getCategoryStyle = (category: BenefitMetric['category']) => {
-    switch (category) {
-      case 'environmental':
-        return {
-          bg: 'bg-green-50',
-          border: 'border-green-300',
-          text: 'text-green-900',
-          valueText: 'text-green-600',
-          icon: '🌍'
-        };
-      case 'economic':
-        return {
-          bg: 'bg-amber-50',
-          border: 'border-amber-300',
-          text: 'text-amber-900',
-          valueText: 'text-amber-600',
-          icon: '💰'
-        };
-      case 'operational':
-        return {
-          bg: 'bg-blue-50',
-          border: 'border-blue-300',
-          text: 'text-blue-900',
-          valueText: 'text-blue-600',
-          icon: '⚙️'
-        };
-      case 'overall':
-        return {
-          bg: 'bg-purple-50',
-          border: 'border-purple-300',
-          text: 'text-purple-900',
-          valueText: 'text-purple-600',
-          icon: '📊'
-        };
-    }
-  };
+export function BenefitMetricsBar({ benefits, className = '' }: BenefitsSummaryProps) {
+  const categories = [
+    { key: 'environmental', label: 'Environmental Potential', color: 'text-green-700' },
+    { key: 'economic', label: 'Economic Potential', color: 'text-green-700' },
+    { key: 'operational', label: 'Operational Potential', color: 'text-green-700' },
+  ] as const;
 
   return (
-    <div className={`bg-white rounded-xl shadow-lg p-6 ${className}`}>
+    <div className={`${className}`}>
       {/* Header */}
-      <div className="mb-4 pb-3 border-b border-gray-200">
-        <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-          <span>🎯</span>
-          Key Improvements at a Glance
+      <div className="mb-6 text-center">
+        <h3 className="text-lg font-semibold text-gray-800">
+          Potential Benefits of the Proposed System
         </h3>
-        <p className="text-sm text-gray-600 mt-1">
-          Measurable benefits of the proposed biochar system transformation
+        <p className="text-sm text-gray-500 mt-1">
+          Benefits will vary based on implementation and local conditions
         </p>
       </div>
 
-      {/* Metrics Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {metrics.map((metric, idx) => {
-          const style = getCategoryStyle(metric.category);
-          
-          return (
-            <div
-              key={idx}
-              className={`${style.bg} ${style.border} border-2 rounded-lg p-4 hover:shadow-md transition-all duration-200`}
-            >
-              {/* Icon and Category */}
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-2xl">{metric.icon || style.icon}</span>
-                <span className={`text-xs font-semibold uppercase tracking-wide ${style.text}`}>
-                  {metric.category}
-                </span>
-              </div>
-
-              {/* Label */}
-              <h4 className={`text-sm font-semibold ${style.text} mb-2 leading-tight`}>
-                {metric.label}
-              </h4>
-
-              {/* Value - Large and prominent */}
-              <div className={`text-3xl font-bold ${style.valueText} mb-2`}>
-                {metric.value}
-              </div>
-
-              {/* Description */}
-              <p className="text-xs text-gray-700 leading-tight">
-                {metric.description}
-              </p>
-            </div>
-          );
-        })}
+      {/* Benefits in three columns */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {categories.map(({ key, label, color }) => (
+          <div key={key} className="bg-white border border-gray-200 border-l-4 border-l-green-600 rounded-lg p-4 shadow-sm">
+            <h4 className={`text-sm font-semibold ${color} mb-3 uppercase tracking-wide`}>
+              {label}
+            </h4>
+            <ul className="space-y-2">
+              {benefits[key].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
+                  <span className="flex-shrink-0 mt-0.5">{item.icon}</span>
+                  <span>{item.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
 /**
- * Predefined metric sets for each component
+ * Predefined benefit sets for each component - focused on potential rather than claims
  */
-export const COMPONENT_METRICS: Record<string, BenefitMetric[]> = {
-  'farm': [
-    {
-      category: 'environmental',
-      label: 'Nutrient Runoff Reduction',
-      value: '-95%',
-      description: 'Biochar prevents nitrogen and phosphorus from entering waterways',
-      icon: '💧'
-    },
-    {
-      category: 'environmental',
-      label: 'GHG Emissions Reduction',
-      value: '-60%',
-      description: 'Carbon sequestration and reduced synthetic fertilizer use',
-      icon: '🌍'
-    },
-    {
-      category: 'economic',
-      label: 'Annual Cost Savings',
-      value: '$50,000',
-      description: 'Reduced fertilizer purchases and improved soil productivity',
-      icon: '💰'
-    },
-    {
-      category: 'operational',
-      label: 'Soil Quality Improvement',
-      value: '+40%',
-      description: 'Enhanced water retention, nutrient availability, and microbial activity',
-      icon: '🌱'
-    }
-  ],
-  'chicken-house': [
-    {
-      category: 'environmental',
-      label: 'Ammonia Reduction',
-      value: '-90%',
-      description: 'Biochar-based litter dramatically reduces ammonia emissions at the poultry producer',
-      icon: '😤'
-    },
-    {
-      category: 'economic',
-      label: 'Energy Cost Savings',
-      value: '$25,000/yr',
-      description: 'Reduced ventilation needs and improved bird health',
-      icon: '⚡'
-    },
-    {
-      category: 'operational',
-      label: 'Bird Health Improvement',
-      value: '+25%',
-      description: 'Better air quality leads to healthier, more productive birds',
-      icon: '🐔'
-    },
-    {
-      category: 'operational',
-      label: 'Litter Management',
-      value: 'Simplified',
-      description: 'Biochar litter lasts longer and requires less frequent replacement',
-      icon: '♻️'
-    }
-  ],
-  'processing-plant': [
-    {
-      category: 'environmental',
-      label: 'Fossil Fuel Replacement',
-      value: '100%',
-      description: 'Biogas from anaerobic digester replaces natural gas',
-      icon: '🔥'
-    },
-    {
-      category: 'economic',
-      label: 'Energy Independence',
-      value: 'Complete',
-      description: 'Self-sufficient energy from waste streams',
-      icon: '💡'
-    },
-    {
-      category: 'environmental',
-      label: 'Waste Reduction',
-      value: '-85%',
-      description: 'Organic waste converted to valuable energy and products',
-      icon: '♻️'
-    },
-    {
-      category: 'operational',
-      label: 'Operational Efficiency',
-      value: '+30%',
-      description: 'Reduced disposal costs and energy expenses',
-      icon: '📈'
-    }
-  ],
-  'waterways': [
-    {
-      category: 'environmental',
-      label: 'Nutrient Runoff Reduction',
-      value: '-95%',
-      description: 'Biochar prevents nitrogen and phosphorus from entering waterways',
-      icon: '💧'
-    },
-    {
-      category: 'environmental',
-      label: 'Water Quality Improvement',
-      value: 'Dramatic',
-      description: 'Restored ecosystems, reduced algal blooms and dead zones',
-      icon: '🌊'
-    },
-    {
-      category: 'environmental',
-      label: 'Aquatic Life Recovery',
-      value: '+80%',
-      description: 'Fish populations and biodiversity improvement',
-      icon: '🐟'
-    },
-    {
-      category: 'overall',
-      label: 'Ecosystem Health',
-      value: 'Restored',
-      description: 'Eliminated eutrophication and water pollution',
-      icon: '🌿'
-    }
-  ],
-  'anaerobic-digester': [
-    {
-      category: 'environmental',
-      label: 'Waste Diversion',
-      value: '100%',
-      description: 'All organic waste converted to biogas and digestate',
-      icon: '♻️'
-    },
-    {
-      category: 'economic',
-      label: 'Revenue Generation',
-      value: '$75,000/yr',
-      description: 'Biogas energy production and digestate sales',
-      icon: '💰'
-    },
-    {
-      category: 'environmental',
-      label: 'GHG Emission Reduction',
-      value: '-80%',
-      description: 'Methane capture prevents atmospheric release',
-      icon: '🌍'
-    },
-    {
-      category: 'overall',
-      label: 'System Value',
-      value: 'High',
-      description: 'Transforms disposal problem into revenue stream',
-      icon: '⭐'
-    }
-  ],
-  'pyrolysis-unit': [
-    {
-      category: 'environmental',
-      label: 'Carbon Sequestration',
-      value: '500 tons/yr',
-      description: 'Biochar locks carbon in stable form for centuries',
-      icon: '🌍'
-    },
-    {
-      category: 'economic',
-      label: 'Product Revenue',
-      value: '$100,000/yr',
-      description: 'Biochar, bio-oils, and syngas sales',
-      icon: '💰'
-    },
-    {
-      category: 'operational',
-      label: 'Energy Generation',
-      value: '2.5 MW',
-      description: 'Syngas provides renewable energy for operations',
-      icon: '⚡'
-    },
-    {
-      category: 'overall',
-      label: 'Innovation Impact',
-      value: 'Transformative',
-      description: 'Creates multiple value streams from waste material',
-      icon: '🚀'
-    }
-  ]
+export const COMPONENT_METRICS: Record<string, ComponentBenefits> = {
+  'farm': {
+    environmental: [
+      { icon: '💧', text: 'Reduced nutrient runoff to waterways' },
+      { icon: '🌍', text: 'Carbon sequestration in soil' },
+      { icon: '🌱', text: 'Lower synthetic fertilizer dependency' },
+    ],
+    economic: [
+      { icon: '💰', text: 'Potential fertilizer cost reduction' },
+      { icon: '📈', text: 'Improved crop yields over time' },
+      { icon: '♻️', text: 'Value from waste materials' },
+    ],
+    operational: [
+      { icon: '🌾', text: 'Enhanced soil water retention' },
+      { icon: '🔬', text: 'Improved soil microbial activity' },
+      { icon: '⚡', text: 'Reduced irrigation needs' },
+    ],
+  },
+  'chicken-house': {
+    environmental: [
+      { icon: '😤', text: 'Reduced ammonia emissions' },
+      { icon: '🌍', text: 'Lower greenhouse gas output' },
+      { icon: '💨', text: 'Improved air quality in house' },
+    ],
+    economic: [
+      { icon: '⚡', text: 'Potential ventilation cost savings' },
+      { icon: '🐔', text: 'Improved bird productivity' },
+      { icon: '💊', text: 'Reduced health-related costs' },
+    ],
+    operational: [
+      { icon: '♻️', text: 'Extended litter life' },
+      { icon: '🛠️', text: 'Simplified management' },
+      { icon: '📊', text: 'Better growing conditions' },
+    ],
+  },
+  'processing-plant': {
+    environmental: [
+      { icon: '🔥', text: 'Reduced fossil fuel dependency' },
+      { icon: '♻️', text: 'Organic waste conversion' },
+      { icon: '🌍', text: 'Lower carbon footprint' },
+    ],
+    economic: [
+      { icon: '💡', text: 'On-site energy generation' },
+      { icon: '📉', text: 'Reduced disposal costs' },
+      { icon: '💰', text: 'New revenue from byproducts' },
+    ],
+    operational: [
+      { icon: '⚙️', text: 'Integrated waste management' },
+      { icon: '📈', text: 'Improved resource efficiency' },
+      { icon: '🔄', text: 'Closed-loop systems' },
+    ],
+  },
+  'waterways': {
+    environmental: [
+      { icon: '💧', text: 'Reduced nutrient pollution' },
+      { icon: '🌊', text: 'Improved water quality' },
+      { icon: '🐟', text: 'Better aquatic habitat' },
+    ],
+    economic: [
+      { icon: '🎣', text: 'Preserved fishing resources' },
+      { icon: '🏖️', text: 'Protected recreational value' },
+      { icon: '💰', text: 'Avoided remediation costs' },
+    ],
+    operational: [
+      { icon: '🌿', text: 'Healthier ecosystems' },
+      { icon: '🦆', text: 'Biodiversity support' },
+      { icon: '⚖️', text: 'Regulatory compliance' },
+    ],
+  },
+  'anaerobic-digester': {
+    environmental: [
+      { icon: '♻️', text: 'Organic waste diversion' },
+      { icon: '🌍', text: 'Methane capture and use' },
+      { icon: '💧', text: 'Reduced water pollution' },
+    ],
+    economic: [
+      { icon: '⚡', text: 'Biogas energy production' },
+      { icon: '🌱', text: 'Digestate fertilizer value' },
+      { icon: '📉', text: 'Lower disposal costs' },
+    ],
+    operational: [
+      { icon: '🔄', text: 'Continuous processing' },
+      { icon: '📊', text: 'Predictable outputs' },
+      { icon: '🛠️', text: 'Established technology' },
+    ],
+  },
+  'pyrolysis-unit': {
+    environmental: [
+      { icon: '🌍', text: 'Long-term carbon storage' },
+      { icon: '♻️', text: 'Waste-to-resource conversion' },
+      { icon: '💨', text: 'Reduced emissions vs. alternatives' },
+    ],
+    economic: [
+      { icon: '💰', text: 'Multiple product streams' },
+      { icon: '⚡', text: 'Energy from syngas' },
+      { icon: '🧪', text: 'Bio-oil and biochar sales' },
+    ],
+    operational: [
+      { icon: '🔥', text: 'Thermal processing efficiency' },
+      { icon: '📦', text: 'Volume reduction' },
+      { icon: '🔬', text: 'Customizable outputs' },
+    ],
+  },
 };

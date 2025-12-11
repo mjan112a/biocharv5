@@ -19,18 +19,20 @@ export default function HomePage() {
       <header className="bg-card border-b border-border shadow-sm w-full">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-4">
           <div className="flex items-center gap-4">
+            <TitleDropdown />
+            <span className="text-sm text-muted-foreground font-light">
+              a <span className="font-medium text-foreground">WasteHub</span> technology
+            </span>
+            <div className="h-8 w-px bg-border ml-auto" />
             <Image
               src="/images/wastehub-logo.png"
               alt="WasteHub"
-              width={200}
-              height={60}
-              className="h-12 w-auto"
+              width={160}
+              height={48}
+              className="h-10 w-auto"
               priority
             />
-            <div className="h-8 w-px bg-border" />
-            <TitleDropdown />
           </div>
-          
         </div>
       </header>
 
@@ -80,37 +82,54 @@ export default function HomePage() {
           <div className="w-full h-1 bg-gradient-to-r from-primary via-emerald-400 to-primary" />
         </section>
 
-        {/* Introduction Section - Full Bleed with Emerald Background */}
-        <section className="w-full bg-gradient-to-b from-emerald-50/50 to-emerald-50/20">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 relative">
-            <div className="absolute top-0 left-6 lg:left-12 w-1 h-full bg-gradient-to-b from-primary to-primary/20" />
-            <div className="pl-6">
-              <h2 className="text-4xl font-bold mb-8 text-foreground">
-                Poultry Waste to Value: A Circular Solution
+        {/* Introduction Section - Compact */}
+        <section className="w-full bg-gradient-to-b from-emerald-50/50 to-white">
+          <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-10">
+            <div className="text-center mb-6">
+              <h2 className="text-3xl font-bold mb-3 text-foreground">
+                Turning Waste Into Value
               </h2>
-              
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    The poultry industry generates <strong>significant waste annually</strong>. Our integrated system transforms <strong>poultry litter</strong> into biochar, renewable energy, and organic fertilizer.
-                  </p>
-                  <div className="flex items-center gap-4">
-                     <div className="flex flex-col border border-border p-4 bg-white/60 backdrop-blur-sm min-w-[140px]">
-                       <span className="text-xs text-muted-foreground font-bold uppercase tracking-wider">Carbon Impact</span>
-                       <span className="text-2xl font-bold text-primary">Net Negative</span>
-                     </div>
-                     <div className="flex flex-col border border-border p-4 bg-white/60 backdrop-blur-sm min-w-[140px]">
-                       <span className="text-xs text-muted-foreground font-bold uppercase tracking-wider">Waste Output</span>
-                       <span className="text-2xl font-bold text-primary">Minimal</span>
-                     </div>
-                  </div>
-                </div>
-                <div className="bg-white/60 backdrop-blur-sm p-6 flex flex-col justify-center border border-border">
-                  <p className="text-sm text-muted-foreground font-medium">
-                    <span className="text-primary font-bold text-lg block mb-2">💡 Interactive Diagram</span>
-                    Use the toggle below to compare current practices with our proposed circular system. Click on component icons to explore detailed metrics.
-                  </p>
-                </div>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Our circular system transforms poultry waste into valuable resources, closing the loop on agricultural byproducts.
+              </p>
+            </div>
+            
+            {/* Transformation Flow */}
+            <div className="flex items-center justify-center gap-4 flex-wrap mb-8">
+              <div className="flex items-center gap-3 bg-white border border-border px-4 py-3 shadow-sm">
+                <span className="text-2xl">🗑️</span>
+                <span className="text-sm font-medium text-foreground">Poultry Waste</span>
+              </div>
+              <span className="text-2xl text-primary font-bold">→</span>
+              <div className="flex items-center gap-3 bg-primary/10 border border-primary/20 px-4 py-3 shadow-sm">
+                <span className="text-2xl">⚡</span>
+                <span className="text-sm font-medium text-foreground">Renewable Energy</span>
+              </div>
+              <span className="text-2xl text-primary font-bold hidden sm:inline">+</span>
+              <div className="flex items-center gap-3 bg-primary/10 border border-primary/20 px-4 py-3 shadow-sm">
+                <span className="text-2xl">🌱</span>
+                <span className="text-sm font-medium text-foreground">Biochar</span>
+              </div>
+              <span className="text-2xl text-primary font-bold hidden sm:inline">+</span>
+              <div className="flex items-center gap-3 bg-primary/10 border border-primary/20 px-4 py-3 shadow-sm">
+                <span className="text-2xl">🌾</span>
+                <span className="text-sm font-medium text-foreground">Fertilizer</span>
+              </div>
+            </div>
+
+            {/* How to Use - Compact */}
+            <div className="flex items-center justify-center gap-6 text-xs text-muted-foreground border-t border-border pt-4">
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 bg-primary/10 flex items-center justify-center rounded-full text-primary font-bold text-xs">1</span>
+                <span><strong>Toggle</strong> Current vs Proposed</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 bg-primary/10 flex items-center justify-center rounded-full text-primary font-bold text-xs">2</span>
+                <span><strong>Click</strong> icons to drill down</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 bg-primary/10 flex items-center justify-center rounded-full text-primary font-bold text-xs">3</span>
+                <span><strong>Hover</strong> for details</span>
               </div>
             </div>
           </div>
@@ -118,13 +137,13 @@ export default function HomePage() {
 
         {/* System Toggle & Diagram */}
         <section className="w-full bg-gradient-to-b from-slate-100 to-slate-50">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-12">
+          <div className="max-w-[1600px] mx-auto px-4 lg:px-6 py-8">
             <div className="bg-card border border-border shadow-lg">
-            <div className="px-6 py-6">
+            <div className="px-2 py-4">
               {/* Sankey Diagram with Toggle */}
               <div className="border border-border bg-white/50 backdrop-blur-sm shadow-inner">
                 {/* Diagram Title Bar with Toggle */}
-                <div className={`p-4 flex items-center justify-between border-b-2 transition-all duration-300 ${
+                <div className={`p-3 flex items-center justify-between border-b-2 transition-all duration-300 ${
                   showProposed
                     ? 'border-primary bg-primary/10'
                     : 'border-destructive bg-destructive/10'
@@ -133,12 +152,12 @@ export default function HomePage() {
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">{showProposed ? '✨' : '⚠️'}</span>
                     <div>
-                      <h2 className={`text-2xl font-bold uppercase tracking-wide ${
+                      <h2 className={`text-xl font-bold uppercase tracking-wide ${
                         showProposed ? 'text-primary' : 'text-destructive'
                       }`}>
                         {showProposed ? 'Proposed System' : 'Current System'}
                       </h2>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-xs text-muted-foreground">
                         {showProposed ? 'Biochar Circular Economy Model' : 'Linear Waste Model'}
                       </p>
                     </div>
@@ -148,7 +167,7 @@ export default function HomePage() {
                   <div className="flex bg-white border-2 border-gray-300 p-1 shadow-sm rounded-lg">
                     <button
                       onClick={() => setShowProposed(false)}
-                      className={`px-6 py-2.5 text-sm font-bold transition-all duration-200 flex items-center gap-2 rounded-md ${
+                      className={`px-4 py-2 text-sm font-bold transition-all duration-200 flex items-center gap-2 rounded-md ${
                         !showProposed
                           ? 'bg-red-500 text-white shadow-md'
                           : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -159,7 +178,7 @@ export default function HomePage() {
                     </button>
                     <button
                       onClick={() => setShowProposed(true)}
-                      className={`px-6 py-2.5 text-sm font-bold transition-all duration-200 flex items-center gap-2 rounded-md ${
+                      className={`px-4 py-2 text-sm font-bold transition-all duration-200 flex items-center gap-2 rounded-md ${
                         showProposed
                           ? 'bg-green-600 text-white shadow-md'
                           : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -172,11 +191,11 @@ export default function HomePage() {
                 </div>
 
                 {/* Diagram Container */}
-                <div className="p-4">
+                <div className="p-2">
                   <CircularSankeyHomepage
                     diagramData={showProposed ? proposedSystemData : currentSystemData}
-                    width={1000}
-                    height={850}
+                    width={1100}
+                    height={600}
                   />
                 </div>
 
@@ -336,33 +355,27 @@ export default function HomePage() {
               <p className="text-slate-400 mb-8 text-lg">
                 Industrial-grade circular economy solutions. Transform liabilities into assets with our patent-pending process.
               </p>
-              <div className="flex gap-4">
-                <button className="bg-primary text-slate-950 font-bold px-8 py-3 hover:bg-emerald-400 transition-colors uppercase tracking-wider text-sm">
-                  Request Protocol
-                </button>
-                <button className="border border-slate-700 text-white font-bold px-8 py-3 hover:bg-slate-900 transition-colors uppercase tracking-wider text-sm">
-                  Contact Sales
-                </button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="mailto:Cwohlert@waste-hub.com?subject=Bioloop Inquiry"
+                  className="bg-primary text-slate-950 font-bold px-8 py-3 hover:bg-emerald-400 transition-colors uppercase tracking-wider text-sm text-center"
+                >
+                  Contact Us
+                </a>
               </div>
+              <p className="text-slate-500 text-sm mt-4">
+                Contact Calvin Wohlert at <a href="mailto:Cwohlert@waste-hub.com" className="text-primary hover:text-emerald-400 transition-colors">Cwohlert@waste-hub.com</a>
+              </p>
             </div>
             <div className="border-l border-slate-800 pl-12 hidden md:block">
-               <div className="grid grid-cols-2 gap-8">
-                 <div>
-                   <h4 className="text-xs font-mono text-slate-500 uppercase mb-2">Technology</h4>
-                   <ul className="text-sm text-slate-300 space-y-2">
-                     <li>Biochar Reactor V4</li>
-                     <li>Anaerobic Digestion</li>
-                     <li>Power Generation</li>
-                   </ul>
-                 </div>
-                 <div>
-                   <h4 className="text-xs font-mono text-slate-500 uppercase mb-2">Compliance</h4>
-                   <ul className="text-sm text-slate-300 space-y-2">
-                     <li>EPA Certified</li>
-                     <li>ISO 14001</li>
-                     <li>Carbon Registry</li>
-                   </ul>
-                 </div>
+               <div>
+                 <h4 className="text-xs font-mono text-slate-500 uppercase mb-2">Technology</h4>
+                 <ul className="text-sm text-slate-300 space-y-2">
+                   <li>Biochar Production</li>
+                   <li>Anaerobic Digestion</li>
+                   <li>Renewable Energy Generation</li>
+                   <li>Circular Economy Integration</li>
+                 </ul>
                </div>
             </div>
           </div>
