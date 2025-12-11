@@ -69,6 +69,35 @@
       }
     },
 
+    "processing-plant-02": {
+      "title": "Processing Plant",
+      "short_description": "Primary meat processing facility",
+      "contexts": {
+        "current": {
+          "title": "Processing Plant - Current System",
+          "description": "Standard poultry processing operations",
+          "energy_use": "Natural gas for hot water, grid electricity",
+          "problems": [
+            "High energy costs",
+            "Significant GHG emissions from fossil fuels",
+            "Price volatility exposure",
+            "Waste heat often not recovered"
+          ]
+        },
+        "proposed": {
+          "title": "Processing Plant - Biogas Powered",
+          "description": "Renewable energy from on-site biogas",
+          "improvements": [
+            "Biogas can replace natural gas",
+            "Potential for on-site electricity generation",
+            "Waste heat utilization",
+            "Greater energy independence"
+          ],
+          "value": "Reduced carbon emissions"
+        }
+      }
+    },
+
     "chicken-processing-plant-03": {
       "title": "Processing Plant",
       "short_description": "Chicken processing and meat production facility",
