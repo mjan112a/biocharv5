@@ -62,8 +62,8 @@ export default function IconTooltip({
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
     
-    // Offset from cursor
-    const offset = 20;
+    // Offset from cursor - increased to ensure tooltip doesn't overlap with icon
+    const offset = 80; // Larger offset to clear typical icon sizes
     const padding = 10; // Minimum distance from viewport edge
     
     // Determine which side of the viewport we're on
@@ -90,18 +90,36 @@ export default function IconTooltip({
       }
     }
     
-    // Vertical positioning
-    if (isBottomHalf) {
-      // Cursor is in bottom half - show tooltip ABOVE cursor
-      top = y - tooltipHeight - offset;
-      if (top < padding) {
-        top = padding;
+    // Vertical positioning - center vertically relative to cursor when possible
+    // This keeps the tooltip from blocking the icon
+    top = y - tooltipHeight / 2;
+    
+    // Ensure tooltip stays within viewport bounds
+    if (top < padding) {
+      top = padding;
+    } else if (top + tooltipHeight > viewportHeight - padding) {
+      top = viewportHeight - tooltipHeight - padding;
+    }
+    
+    // Additional check: ensure tooltip doesn't overlap with cursor position
+    // by verifying there's enough horizontal distance
+    const tooltipRight = left + tooltipWidth;
+    const tooltipLeft = left;
+    const cursorBuffer = 60; // Minimum horizontal distance from cursor
+    
+    if (isRightSide) {
+      // Tooltip should be completely to the left of cursor
+      if (tooltipRight > x - cursorBuffer) {
+        left = x - tooltipWidth - cursorBuffer;
+        if (left < padding) left = padding;
       }
     } else {
-      // Cursor is in top half - show tooltip BELOW cursor
-      top = y + offset;
-      if (top + tooltipHeight > viewportHeight - padding) {
-        top = viewportHeight - tooltipHeight - padding;
+      // Tooltip should be completely to the right of cursor
+      if (tooltipLeft < x + cursorBuffer) {
+        left = x + cursorBuffer;
+        if (left + tooltipWidth > viewportWidth - padding) {
+          left = viewportWidth - tooltipWidth - padding;
+        }
       }
     }
     
