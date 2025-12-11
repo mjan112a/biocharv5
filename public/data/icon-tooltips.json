@@ -211,6 +211,30 @@
       }
     },
 
+    "pyrolysis-unit-03": {
+      "title": "Pyrolysis Unit",
+      "short_description": "Thermal conversion to biochar, bio-oil, syngas",
+      "contexts": {
+        "proposed": {
+          "title": "Pyrolysis Unit - Biochar Production",
+          "description": "Transform litter into biochar, syngas, and bio-oils",
+          "key_benefits": {
+            "biochar_production": "Significant biochar output",
+            "syngas_energy": "Self-powering potential - minimal external fuel needed",
+            "nutrient_recovery": "P and K preserved in biochar",
+            "carbon_sequestration": "Stable carbon for long-term storage"
+          },
+          "energy_integration": [
+            "Syngas combustion heats the reactor",
+            "Waste heat can dry incoming wet litter",
+            "Thermally self-sufficient operation possible",
+            "Excess energy available for other uses"
+          ],
+          "bottom_line": "Potential carbon credits while producing valuable products"
+        }
+      }
+    },
+
     "biochar-01": {
       "title": "Biochar",
       "short_description": "Stable carbon with multiple uses",
