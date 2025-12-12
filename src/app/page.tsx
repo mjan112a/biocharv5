@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { CircularSankeyHomepage } from '@/components/d3/CircularSankeyHomepage';
@@ -12,6 +12,23 @@ import proposedSystemData from '@/data/diagrams/system-overview-proposed.json';
 
 export default function HomePage() {
   const [showProposed, setShowProposed] = useState(false);
+  // Track if we should animate the transition (only when switching TO proposed)
+  const [animateTransition, setAnimateTransition] = useState(false);
+  
+  // Handle toggle with animation trigger
+  const handleToggleToProposed = useCallback(() => {
+    if (!showProposed) {
+      // Switching to proposed - trigger animation and keep it on for pulse effect
+      setAnimateTransition(true);
+      setShowProposed(true);
+      // Note: Don't reset animateTransition - let AD/Pyro pulse continue
+    }
+  }, [showProposed]);
+  
+  const handleToggleToCurrent = useCallback(() => {
+    setAnimateTransition(false);
+    setShowProposed(false);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -166,7 +183,7 @@ export default function HomePage() {
                   {/* Toggle Buttons */}
                   <div className="flex bg-white border-2 border-gray-300 p-1 shadow-sm rounded-lg">
                     <button
-                      onClick={() => setShowProposed(false)}
+                      onClick={handleToggleToCurrent}
                       className={`px-4 py-2 text-sm font-bold transition-all duration-200 flex items-center gap-2 rounded-md ${
                         !showProposed
                           ? 'bg-red-500 text-white shadow-md'
@@ -177,7 +194,7 @@ export default function HomePage() {
                       Current
                     </button>
                     <button
-                      onClick={() => setShowProposed(true)}
+                      onClick={handleToggleToProposed}
                       className={`px-4 py-2 text-sm font-bold transition-all duration-200 flex items-center gap-2 rounded-md ${
                         showProposed
                           ? 'bg-green-600 text-white shadow-md'
@@ -196,6 +213,7 @@ export default function HomePage() {
                     diagramData={showProposed ? proposedSystemData : currentSystemData}
                     width={1100}
                     height={600}
+                    animateTransition={animateTransition}
                   />
                 </div>
 
