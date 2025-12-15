@@ -4,7 +4,6 @@ import React, { useState, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { CircularSankeyHomepage } from '@/components/d3/CircularSankeyHomepage';
-import { TitleDropdown } from '@/components/ui/TitleDropdown';
 
 // Import the diagram data
 import currentSystemData from '@/data/diagrams/system-overview-current.json';
@@ -36,7 +35,7 @@ export default function HomePage() {
       <header className="bg-card border-b border-border shadow-sm w-full">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-4">
           <div className="flex items-center gap-4">
-            <TitleDropdown />
+            <h1 className="text-xl font-bold text-gray-900">BiocharHub</h1>
             <span className="text-sm text-muted-foreground font-light">
               a <span className="font-medium text-foreground">WasteHub</span> technology
             </span>
@@ -77,22 +76,22 @@ export default function HomePage() {
               <div className="max-w-3xl border-l-4 border-primary pl-8">
                 <div className="flex items-center gap-2 text-primary mb-2">
                   <span className="inline-block w-2 h-2 bg-primary animate-pulse" />
-                  <span className="text-sm font-mono uppercase tracking-wider">System Operational</span>
+                  <span className="text-sm font-mono uppercase tracking-wider">Integrated Process Model</span>
                 </div>
-                <h1 className="text-6xl font-bold mb-4 text-white leading-none tracking-tight">
-                  BIOCHAR<span className="text-primary">.OS</span>
+                <h2 className="text-6xl font-bold mb-4 text-white leading-none tracking-tight">
+                  BIOCHAR<span className="text-primary">HUB</span>
                   <br />
-                  <span className="text-3xl font-light text-slate-300">SYSTEM OVERVIEW</span>
-                </h1>
+                  <span className="text-3xl font-light text-slate-300">CIRCULAR SYSTEM VISUALIZATION</span>
+                </h2>
                 <p className="text-xl text-slate-300 max-w-xl border-t border-slate-700 pt-4 mt-4">
-                  Advanced poultry waste valorization. Turning liability into a carbon-negative asset class.
+                  Integrated pyrolysis and anaerobic digestion for poultry operations. Explore how WasteHub&apos;s proprietary process converts organic waste streams into renewable energy, biochar co-products, and verified carbon credits—while improving bird health and feed conversion.
                 </p>
               </div>
             </div>
 
-            {/* Biochar Innovations Inc. watermark */}
+            {/* WasteHub watermark */}
             <div className="absolute bottom-4 right-6 text-slate-400 text-xs font-mono tracking-widest">
-              BIOCHAR INNOVATIONS INC. // V2.0
+              WASTEHUB TECHNOLOGIES // V2.0
             </div>
           </div>
           {/* Accent Bar */}
@@ -368,14 +367,14 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold mb-4 text-white">
-                Waste Hub <span className="text-primary font-light">Bioloop™</span>
+                BiocharHub
               </h2>
               <p className="text-slate-400 mb-8 text-lg">
-                Industrial-grade circular economy solutions. Transform liabilities into assets with our patent-pending process.
+                Industrial-grade circular economy solutions. Transform liabilities into assets with our integrated pyrolysis and anaerobic digestion process.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="mailto:Cwohlert@waste-hub.com?subject=Bioloop Inquiry"
+                  href="mailto:Cwohlert@waste-hub.com?subject=BiocharHub Inquiry"
                   className="bg-primary text-slate-950 font-bold px-8 py-3 hover:bg-emerald-400 transition-colors uppercase tracking-wider text-sm text-center"
                 >
                   Contact Us
@@ -387,12 +386,12 @@ export default function HomePage() {
             </div>
             <div className="border-l border-slate-800 pl-12 hidden md:block">
                <div>
-                 <h4 className="text-xs font-mono text-slate-500 uppercase mb-2">Technology</h4>
+                 <h4 className="text-xs font-mono text-slate-500 uppercase mb-2">Core Technologies</h4>
                  <ul className="text-sm text-slate-300 space-y-2">
-                   <li>Biochar Production</li>
-                   <li>Anaerobic Digestion</li>
+                   <li>Pyrolysis-Based Biochar Production</li>
+                   <li>Anaerobic Digestion Integration</li>
                    <li>Renewable Energy Generation</li>
-                   <li>Circular Economy Integration</li>
+                   <li>Carbon Credit Verification</li>
                  </ul>
                </div>
             </div>
@@ -403,7 +402,7 @@ export default function HomePage() {
         <div className="border-t border-slate-800 bg-slate-900/50 w-full">
           <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-4 flex justify-between items-center">
             <p className="text-xs text-slate-600 font-mono">
-              © 2025 WASTE HUB SYSTEMS. ALL RIGHTS RESERVED.
+              © 2025 WASTEHUB SYSTEMS. ALL RIGHTS RESERVED.
             </p>
             <div className="flex gap-4 text-xs text-slate-600 font-mono">
               <span>PRIVACY PROTOCOL</span>
