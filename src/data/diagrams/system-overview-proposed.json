@@ -2,7 +2,7 @@
   "nodes": [
     {
       "id": "chicken-house",
-      "name": "Poultry<br/>Producer",
+      "name": "Poultry<br/>Producers",
       "x": 187.58298981841025,
       "y": 90.97769958787748,
       "width": 150,
@@ -29,8 +29,8 @@
     {
       "id": "anaerobic-digester",
       "name": "Anaerobic Digester",
-      "x": 421.7127331966579,
-      "y": 245.99958272058794,
+      "x": 448.8007693140394,
+      "y": 246.59079184401966,
       "width": 130,
       "height": 109,
       "color": "#8B5CF6",
@@ -279,6 +279,19 @@
       "height": 79,
       "icon": "/images/iconslibrary/biochar-01.svg",
       "iconOnly": true
+    },
+    {
+      "id": "node-1765928235596-l5ytirekb",
+      "name": "Litter <br>+ Char",
+      "x": 365.8954100827691,
+      "y": 108.11190984060866,
+      "color": "#5a4311",
+      "width": 55,
+      "height": 50,
+      "icon": "/images/iconslibrary/litter-char-from-chicken-house-01.svg",
+      "iconOnly": true,
+      "fontSize": 10,
+      "labelOffset": 7
     }
   ],
   "links": [
@@ -335,20 +348,6 @@
       "particleIconSource": "custom",
       "particleType": "icon",
       "particleIcon": "/images/iconslibrary/Chicken Truck.svg"
-    },
-    {
-      "id": "link-house-to-pyrolysis",
-      "source": "chicken-house",
-      "target": "pyrolysis-unit",
-      "value": 10,
-      "color": "#92400E",
-      "label": "Litter + Char",
-      "animationFrequency": 1,
-      "animationRate": 3,
-      "animationSize": 6,
-      "particleIconSource": "custom",
-      "particleType": "icon",
-      "particleIcon": "/images/iconslibrary/litter-char-from-chicken-house-01.svg"
     },
     {
       "id": "link-house-to-ad",
@@ -617,6 +616,22 @@
       "value": 10,
       "color": "#6B7280",
       "animationFrequency": 2
+    },
+    {
+      "id": "link-1765928301996-ymoee9dr6",
+      "source": "chicken-house",
+      "target": "node-1765928235596-l5ytirekb",
+      "value": 10,
+      "color": "#312607",
+      "animationFrequency": 1
+    },
+    {
+      "id": "link-1765928318525-4xh49v2js",
+      "source": "node-1765928235596-l5ytirekb",
+      "target": "anaerobic-digester",
+      "value": 10,
+      "color": "#4b3b11",
+      "animationFrequency": 1
     }
   ],
   "config": {
@@ -631,6 +646,6 @@
     "description": "Enhanced poultry system with biochar and circular economy features",
     "type": "overview",
     "system": "proposed",
-    "lastModified": "2025-12-12"
+    "lastModified": "2025-12-16"
   }
 }

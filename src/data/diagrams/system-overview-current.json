@@ -1,14 +1,8 @@
 {
-  "metadata": {
-    "title": "Current System Overview",
-    "description": "Traditional poultry system without biochar enhancements",
-    "type": "overview",
-    "system": "current"
-  },
   "nodes": [
     {
       "id": "chicken-house",
-      "name": "Poultry<br/>Producer",
+      "name": "Poultry<br/>Producers",
       "x": 200,
       "y": 350,
       "width": 150,
@@ -394,5 +388,12 @@
     "nodePadding": 20,
     "nodeWidth": 180,
     "circularLinkGap": 20
+  },
+  "metadata": {
+    "title": "Current System Overview",
+    "description": "Traditional poultry system without biochar enhancements",
+    "type": "overview",
+    "system": "current",
+    "lastModified": "2025-12-16"
   }
 }
