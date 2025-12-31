@@ -4,7 +4,6 @@
     "usage": "Each icon file name maps to tooltip content. Add entries as you add icons.",
     "note": "Tooltips support multiple contexts (current vs proposed, different scales, etc.)"
   },
-
   "tooltips": {
     "chicken-house-01": {
       "title": "Chicken House",
@@ -39,7 +38,6 @@
         }
       }
     },
-
     "processing-plant-01": {
       "title": "Processing Plant",
       "short_description": "Primary meat processing facility",
@@ -68,7 +66,6 @@
         }
       }
     },
-
     "processing-plant-02": {
       "title": "Processing Plant",
       "short_description": "Primary meat processing facility",
@@ -97,7 +94,6 @@
         }
       }
     },
-
     "chicken-processing-plant-03": {
       "title": "Processing Plant",
       "short_description": "Chicken processing and meat production facility",
@@ -133,7 +129,6 @@
         }
       }
     },
-
     "anaerobic-digester-01": {
       "title": "Anaerobic Digester",
       "short_description": "Biogas production system",
@@ -162,7 +157,6 @@
         }
       }
     },
-
     "pyrolysis-unit-01": {
       "title": "Pyrolysis Unit",
       "short_description": "Thermal conversion to biochar, bio-oil, syngas",
@@ -186,7 +180,6 @@
         }
       }
     },
-
     "pyrolysis-unit-02": {
       "title": "Pyrolysis Unit",
       "short_description": "Thermal conversion to biochar, bio-oil, syngas",
@@ -210,7 +203,6 @@
         }
       }
     },
-
     "pyrolysis-unit-03": {
       "title": "Pyrolysis Unit",
       "short_description": "Thermal conversion to biochar, bio-oil, syngas",
@@ -234,7 +226,6 @@
         }
       }
     },
-
     "biochar-01": {
       "title": "Biochar",
       "short_description": "Stable carbon with multiple uses",
@@ -264,7 +255,6 @@
         }
       }
     },
-
     "live-chickens-01": {
       "title": "Live Chickens",
       "short_description": "Input birds for grow-out",
@@ -276,7 +266,6 @@
         }
       }
     },
-
     "used-poultry-litter-01": {
       "title": "Used Poultry Litter",
       "short_description": "Bedding material after grow-out cycle",
@@ -313,7 +302,6 @@
         }
       }
     },
-
     "bio-methane-01": {
       "title": "Bio-Methane",
       "short_description": "Renewable natural gas from biogas",
@@ -336,7 +324,6 @@
         }
       }
     },
-
     "chicken-meat-01": {
       "title": "Chicken Meat",
       "short_description": "Primary revenue product",
@@ -365,7 +352,6 @@
         }
       }
     },
-
     "digestate-liquids-01": {
       "title": "Digestate Liquids",
       "short_description": "Liquid organic fertilizer from digestion",
@@ -389,7 +375,6 @@
         }
       }
     },
-
     "crops-corn-01": {
       "title": "Crops/Corn",
       "short_description": "Agricultural crops from farmland",
@@ -429,7 +414,6 @@
         }
       }
     },
-
     "farm-01": {
       "title": "Farms",
       "short_description": "Agricultural land for crop production",
@@ -470,7 +454,6 @@
         }
       }
     },
-
     "waterways-01": {
       "title": "Waterways",
       "short_description": "Rivers, streams, and water bodies",
@@ -511,7 +494,6 @@
         }
       }
     },
-
     "fresh-pine-shavings-01": {
       "title": "Fresh Pine Shavings",
       "short_description": "Bedding material for chicken houses",
@@ -523,7 +505,6 @@
         }
       }
     },
-
     "chicken-feed-01": {
       "title": "Chicken Feed",
       "short_description": "Nutritionally balanced feed for broiler chickens",
@@ -535,7 +516,6 @@
         }
       }
     },
-
     "fossil-fuels-01": {
       "title": "Fossil Fuels",
       "short_description": "Natural gas and petroleum products",
@@ -561,7 +541,6 @@
         }
       }
     },
-
     "electricity-01": {
       "title": "Electricity",
       "short_description": "Grid power for operations",
@@ -587,7 +566,6 @@
         }
       }
     },
-
     "energy-02": {
       "title": "Energy",
       "short_description": "Power input for processing operations",
@@ -614,7 +592,6 @@
         }
       }
     },
-
     "syngas-energy-01": {
       "title": "Syngas",
       "short_description": "Synthesis gas from pyrolysis",
@@ -631,7 +608,6 @@
         }
       }
     },
-
     "GHG-01": {
       "title": "Greenhouse Gases",
       "short_description": "Carbon emissions from operations",
@@ -659,7 +635,6 @@
         }
       }
     },
-
     "GHG-icon-01": {
       "title": "Greenhouse Gases (Reduced)",
       "short_description": "Lower emissions in proposed system",
@@ -687,7 +662,6 @@
         }
       }
     },
-
     "labor-01": {
       "title": "Labor",
       "short_description": "Workforce requirements",
@@ -698,7 +672,6 @@
         }
       }
     },
-
     "water-01": {
       "title": "Water",
       "short_description": "Water usage in operations",
@@ -721,7 +694,6 @@
         }
       }
     },
-
     "fertilizer-01": {
       "title": "Chemical Fertilizer",
       "short_description": "Synthetic nutrient inputs",
@@ -746,7 +718,6 @@
         }
       }
     },
-
     "diesel-01": {
       "title": "Diesel",
       "short_description": "Fuel for equipment and transport",
@@ -769,7 +740,6 @@
         }
       }
     },
-
     "dead-chickens-01": {
       "title": "Dead Birds",
       "short_description": "Mortality from poultry operations",
@@ -792,7 +762,6 @@
         }
       }
     },
-
     "fog-fats-oils-greases-01": {
       "title": "FOG (Fats, Oils, Greases)",
       "short_description": "Processing plant waste stream",
@@ -815,7 +784,6 @@
         }
       }
     },
-
     "C02-01": {
       "title": "CO2",
       "short_description": "Carbon dioxide",
@@ -831,7 +799,6 @@
         }
       }
     },
-
     "bio-oils-01": {
       "title": "Bio-Oils",
       "short_description": "Liquid fuels from pyrolysis",
@@ -847,7 +814,6 @@
         }
       }
     },
-
     "wood-vinegars-01": {
       "title": "Wood Vinegars",
       "short_description": "Pyrolysis liquid byproduct",
@@ -863,7 +829,6 @@
         }
       }
     },
-
     "renewable-biofuels-01": {
       "title": "Renewable Biofuels",
       "short_description": "Clean energy from organic waste",
@@ -881,6 +846,34 @@
             "Incentive program eligibility",
             "Energy independence"
           ]
+        }
+      }
+    },
+    "anaerobic-digester-03": {
+      "title": "Anaerobic Digester",
+      "short_description": "Biogas production system",
+      "contexts": {
+        "proposed": {
+          "title": "Anaerobic Digester - Renewable Energy Hub",
+          "description": "Convert waste streams into valuable biogas and fertilizer",
+          "key_benefits": {
+            "biogas_production": "Methane from organic waste",
+            "methane_boost": "Increased production with biochar enhancement",
+            "pathogen_destruction": "High-temperature treatment kills pathogens",
+            "fertilizer_output": "Organic digestate output"
+          },
+          "feedstocks_accepted": [
+            "Used poultry litter",
+            "Dead birds (reduced with biochar)",
+            "FOG from processing plant",
+            "Other organic waste streams"
+          ],
+          "outputs": {
+            "biogas": "Methane-rich gas, upgradable to RNG",
+            "digestate_liquid": "Organic liquid fertilizer",
+            "digestate_solid": "Compostable fiber material"
+          },
+          "bottom_line": "Turn waste liability into energy + fertilizer"
         }
       }
     }
