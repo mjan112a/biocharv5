@@ -3,8 +3,8 @@
     {
       "id": "chicken-house",
       "name": "Poultry<br/>Producers",
-      "x": 187.58298981841025,
-      "y": 90.97769958787748,
+      "x": 141.6838175084027,
+      "y": 310.31628438103826,
       "width": 150,
       "height": 150,
       "color": "#059669",
@@ -16,8 +16,8 @@
     {
       "id": "processing-plant",
       "name": "Processing Plant",
-      "x": 374.84036268800344,
-      "y": 411.03002934704693,
+      "x": 766.8644409423301,
+      "y": 84.34068425737735,
       "width": 150,
       "height": 150,
       "color": "#3B82F6",
@@ -29,8 +29,8 @@
     {
       "id": "anaerobic-digester",
       "name": "Anaerobic Digester",
-      "x": 448.8007693140394,
-      "y": 246.59079184401966,
+      "x": 383.33801536370083,
+      "y": 386.70735409733254,
       "width": 130,
       "height": 109,
       "color": "#8B5CF6",
@@ -42,14 +42,15 @@
     {
       "id": "pyrolysis-unit",
       "name": "Pyrolysis",
-      "x": 680.3474265767982,
-      "y": 198.13151701810912,
+      "x": 605.855327253999,
+      "y": 333.5184062839685,
       "width": 120,
       "height": 120,
       "color": "#9333EA",
       "icon": "/images/iconslibrary/pyrolysis-unit-03.svg",
       "iconOnly": true,
-      "showLabel": true
+      "showLabel": true,
+      "labelOffset": -7
     },
     {
       "id": "farms",
@@ -61,13 +62,14 @@
       "color": "#10B981",
       "icon": "/images/iconslibrary/farm-01.svg",
       "iconOnly": true,
-      "showLabel": true
+      "showLabel": true,
+      "labelOffset": -23
     },
     {
       "id": "waterways",
       "name": "Waterways",
-      "x": 711.2532765911097,
-      "y": 561.1218839903315,
+      "x": 728.5595218883257,
+      "y": 558.1658383731731,
       "width": 145,
       "height": 150,
       "color": "#06B6D4",
@@ -79,8 +81,8 @@
     {
       "id": "fresh-bedding",
       "name": "Fresh Poultry<br/>Bedding",
-      "x": 840.8473080317739,
-      "y": 162.7471531581229,
+      "x": 837.0850807932487,
+      "y": 363.7582551249008,
       "color": "#EAB308",
       "width": 60,
       "height": 60,
@@ -92,8 +94,8 @@
     {
       "id": "labor",
       "name": "Labor",
-      "x": 46.1782877316858,
-      "y": 170.5670042160842,
+      "x": 40,
+      "y": 411.1891174527862,
       "color": "#6B7280",
       "width": 55,
       "height": 49,
@@ -106,20 +108,20 @@
       "id": "chicken-feed-water",
       "name": "Chicken Feed<br/>and Water",
       "x": 40,
-      "y": 281.6627920721857,
+      "y": 508.0958863465269,
       "color": "#EAB308",
       "width": 66,
       "height": 73,
       "icon": "/images/iconslibrary/chicken-feed-01.svg",
       "iconOnly": true,
       "showLabel": true,
-      "labelOffset": 22
+      "labelOffset": 12
     },
     {
       "id": "energy-input",
       "name": "Energy<br/>(Reduced)",
-      "x": 159.09896483961228,
-      "y": 417.94096602643776,
+      "x": 548.1132613031187,
+      "y": 72.51650178874351,
       "color": "#F59E0B",
       "width": 55,
       "height": 55,
@@ -131,8 +133,8 @@
     {
       "id": "rng-output",
       "name": "RNG",
-      "x": 645.4787591888996,
-      "y": 130.19368884713413,
+      "x": 628.1725138916837,
+      "y": 277.4047605816274,
       "color": "#22C55E",
       "width": 55,
       "height": 55,
@@ -143,8 +145,8 @@
     {
       "id": "co2-output",
       "name": "Renewable CO2",
-      "x": 609.28832474297,
-      "y": 64.98058899860663,
+      "x": 608.5358792952652,
+      "y": 212.7828698565317,
       "color": "#6B7280",
       "width": 50,
       "height": 50,
@@ -153,22 +155,10 @@
       "showLabel": true
     },
     {
-      "id": "syngas-output",
-      "name": "Syngas",
-      "x": 848.4703441524763,
-      "y": 77.01813843968603,
-      "color": "#F59E0B",
-      "width": 55,
-      "height": 55,
-      "icon": "/images/iconslibrary/syngas-energy-01.svg",
-      "iconOnly": true,
-      "showLabel": true
-    },
-    {
       "id": "biochar-blend",
       "name": "Biochar/<br/>Digestate",
-      "x": 944.314228657081,
-      "y": 509.497867264334,
+      "x": 945.8191195524911,
+      "y": 531.9638139547386,
       "color": "#1E3A5F",
       "width": 60,
       "height": 60,
@@ -180,8 +170,8 @@
     {
       "id": "diesel-input",
       "name": "Diesel (Less)",
-      "x": 108.19206551920404,
-      "y": 563.6427230029615,
+      "x": 160.11080141085193,
+      "y": 546.4976584234421,
       "color": "#6B7280",
       "width": 55,
       "height": 55,
@@ -201,7 +191,7 @@
       "icon": "/images/iconslibrary/fertilizer-01.svg",
       "iconOnly": true,
       "showLabel": true,
-      "labelOffset": 18
+      "labelOffset": 12
     },
     {
       "id": "water-input",
@@ -219,8 +209,8 @@
     {
       "id": "meat-output",
       "name": "Meat<br/>(+Yield)",
-      "x": 649.2198528713467,
-      "y": 483.175967888046,
+      "x": 960,
+      "y": 183.43294230817406,
       "color": "#DC2626",
       "width": 60,
       "height": 60,
@@ -232,15 +222,15 @@
     {
       "id": "ghg-plant",
       "name": "GHG<br/>(Reduced)",
-      "x": 618.3471835096898,
-      "y": 369.49503012223147,
+      "x": 960,
+      "y": 43.147593987932964,
       "color": "#9CA3AF",
       "width": 95,
       "height": 80,
       "iconOnly": true,
       "showLabel": true,
       "icon": "/images/iconslibrary/GHG-icon-01.svg",
-      "labelOffset": 3,
+      "labelOffset": 2,
       "fontSize": 13
     },
     {
@@ -283,8 +273,8 @@
     {
       "id": "node-1765928235596-l5ytirekb",
       "name": "Litter <br>+ Char",
-      "x": 365.8954100827691,
-      "y": 108.11190984060866,
+      "x": 308.70955605718586,
+      "y": 445.69231932010945,
       "color": "#5a4311",
       "width": 55,
       "height": 50,
@@ -333,7 +323,8 @@
       "animationSize": 5,
       "particleIconSource": "custom",
       "particleType": "icon",
-      "particleIcon": "/images/iconslibrary/energy-02.svg"
+      "particleIcon": "/images/iconslibrary/energy-02.svg",
+      "labelPosition": 0.3
     },
     {
       "id": "link-house-to-plant",
@@ -376,7 +367,7 @@
       "particleIconSource": "custom",
       "particleType": "icon",
       "particleIcon": "/images/iconslibrary/fog-fats-oils-greases-01.svg",
-      "returnY": 401.69201699726244
+      "returnY": 44.01049732108385
     },
     {
       "id": "link-plant-to-meat",
@@ -390,7 +381,8 @@
       "animationSize": 6,
       "particleIconSource": "custom",
       "particleType": "icon",
-      "particleIcon": "/images/iconslibrary/chicken-meat-01.svg"
+      "particleIcon": "/images/iconslibrary/chicken-meat-01.svg",
+      "labelPosition": 0.55
     },
     {
       "id": "link-plant-to-ghg",
@@ -400,7 +392,8 @@
       "color": "#9CA3AF",
       "label": "GHG",
       "animationFrequency": 1,
-      "labelPosition": 0.9
+      "labelPosition": 0.7,
+      "returnY": 670
     },
     {
       "id": "link-ad-to-rng",
@@ -414,7 +407,8 @@
       "animationSize": 5,
       "particleIconSource": "custom",
       "particleType": "icon",
-      "particleIcon": "/images/iconslibrary/bio-methane-01.svg"
+      "particleIcon": "/images/iconslibrary/bio-methane-01.svg",
+      "labelPosition": 0.65
     },
     {
       "id": "link-ad-to-co2",
@@ -436,20 +430,6 @@
       "animationRate": 3,
       "animationSize": 5,
       "returnY": 717.4216899847161
-    },
-    {
-      "id": "link-pyrolysis-to-syngas",
-      "source": "pyrolysis-unit",
-      "target": "syngas-output",
-      "value": 8,
-      "color": "#F59E0B",
-      "label": "Syngas",
-      "animationFrequency": 1,
-      "animationRate": 5,
-      "animationSize": 5,
-      "particleIconSource": "custom",
-      "particleType": "icon",
-      "particleIcon": "/images/iconslibrary/syngas-energy-01.svg"
     },
     {
       "id": "link-ad-to-blend",
@@ -476,7 +456,7 @@
       "particleIconSource": "custom",
       "particleType": "icon",
       "particleIcon": "/images/iconslibrary/biochar-01.svg",
-      "returnY": 810,
+      "returnY": 823.5978098389292,
       "arcRadius": 0.5
     },
     {
@@ -549,7 +529,7 @@
       "target": "chicken-feed-water",
       "value": 6,
       "color": "#EAB308",
-      "returnY": 780,
+      "returnY": 798.3274828263827,
       "label": "Crops to Feed"
     },
     {
@@ -560,7 +540,7 @@
       "color": "#22C55E",
       "label": "RNG Energy",
       "returnY": 37.58619330942905,
-      "labelPosition": 0.75
+      "labelPosition": 0.35
     },
     {
       "id": "link-co2-to-plant",
@@ -570,17 +550,7 @@
       "color": "#6B7280",
       "label": "CO2 Capture",
       "returnY": 55.478939280507504,
-      "labelPosition": 0.6
-    },
-    {
-      "id": "link-syngas-to-plant",
-      "source": "syngas-output",
-      "target": "processing-plant",
-      "value": 6,
-      "color": "#F59E0B",
-      "label": "Syngas Energy",
-      "returnY": 18.72414200717128,
-      "labelPosition": 0.75
+      "labelPosition": 0.3
     },
     {
       "id": "link-1765493696649-q7bvpto35",
@@ -631,7 +601,17 @@
       "target": "anaerobic-digester",
       "value": 10,
       "color": "#4b3b11",
-      "animationFrequency": 1
+      "animationFrequency": 1,
+      "returnY": 517.744671559818
+    },
+    {
+      "id": "link-1768238086817-k4yzrebto",
+      "source": "pyrolysis-unit",
+      "target": "processing-plant",
+      "value": 10,
+      "color": "#06B6D4",
+      "label": "Syngas",
+      "labelPosition": 0.3
     }
   ],
   "config": {
@@ -646,6 +626,6 @@
     "description": "Enhanced poultry system with biochar and circular economy features",
     "type": "overview",
     "system": "proposed",
-    "lastModified": "2025-12-16"
+    "lastModified": "2026-01-12"
   }
 }
